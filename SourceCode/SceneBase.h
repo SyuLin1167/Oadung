@@ -1,7 +1,7 @@
 #pragma once
 
-const int ScreenWidth = 1024;		//スクリーン幅指定
-const int ScreenHeight = 768;		//スクリーン高さ指定
+const int ScreenWidth = 1280;		//スクリーン幅指定
+const int ScreenHeight = 1024;		//スクリーン高さ指定
 //---スクリーンサイズの例: 640*480, 800*600, 1024*768, 1280*1024, 1280*720, 1920*1080---//
 
 const int ColorBit = 16;			//カラービット数
