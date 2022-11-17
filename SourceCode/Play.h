@@ -2,8 +2,8 @@
 #include "DxLib.h"
 #include"SceneBase.h"
 
-const float cNear = 0.1f;       //ƒJƒƒ‰‚Ì•`‰æ”ÍˆÍ(‹ß)
-const float cFar = 1000.0f;     //ƒJƒƒ‰‚Ì•`‰æ”ÍˆÍ(‰“)
+const float cNear = 1.0f;       //ƒJƒƒ‰‚Ì•`‰æ”ÍˆÍ(‹ß)
+const float cFar = 2000.0f;     //ƒJƒƒ‰‚Ì•`‰æ”ÍˆÍ(‰“)
 
 class Player;
 

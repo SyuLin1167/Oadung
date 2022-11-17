@@ -6,8 +6,8 @@
 
 Play::Play()
     :SceneBase()
-    , cPos(VGet(0.0f, 10.0f, -20.0f))
-    , cTarget(VGet(0.0f, 10.0f, 0.0f))
+    , cPos(VGet(0.0f, 45.0f, -50.0f))
+    , cTarget(VGet(0.0f, 0.0f, 0.0f))
 {
     BgHandle = LoadGraph("SourceCode/Assets/BackGround/Play.png");
 
