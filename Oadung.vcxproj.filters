@@ -25,6 +25,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\Player">
+      <UniqueIdentifier>{7d7c460b-a58b-4ed3-b77c-e4f22c612f18}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SourceCode\Main.cpp">
@@ -45,11 +48,11 @@
     <ClCompile Include="SourceCode\Result.cpp">
       <Filter>ソース ファイル\Scene\Result</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\Player.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="SourceCode\TimeManager.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\Player.cpp">
+      <Filter>ソース ファイル\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,11 +71,11 @@
     <ClInclude Include="SourceCode\Result.h">
       <Filter>ソース ファイル\Scene\Result</Filter>
     </ClInclude>
-    <ClInclude Include="SourceCode\Player.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="SourceCode\TimeManager.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\Player.h">
+      <Filter>ソース ファイル\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

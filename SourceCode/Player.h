@@ -28,7 +28,15 @@ public:
 	void Draw();
 
 private:
-	int PlyHandle;			//Player画像ハンドル
-	VECTOR PlayerPos;		//Player座標
+	int PlyHandle;		//Player画像ハンドル
+	VECTOR PlyPos;		//Player座標
+	VECTOR PlyDir;		//Player方向
+
+	VECTOR FRONT = { 0, 0, 1 };		//前方向
+	VECTOR BEHIND = { 0, 0, -1 };	//後方向
+	VECTOR RIGHT = { 1, 0, 0 };		//右方向
+	VECTOR LEFT = { -1, 0, 0 };		//左方向
+
+	bool KeyInput;		//キー入力判定
 };
 

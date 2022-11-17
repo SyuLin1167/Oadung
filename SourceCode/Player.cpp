@@ -5,7 +5,9 @@
 
 Player::Player()
     :PlyHandle(-1)
-    , PlayerPos(VGet(0.0f, 0.0f, 0.0f))
+    , PlyPos(VGet(0.0f, 0.0f, 0.0f))
+    ,PlyDir(VGet(0.0f,0.0f,1.0f))
+    ,KeyInput(false)
 {
     PlyHandle = MV1LoadModel("SourceCode/Assets/Player/hackadoll.pmx");
 }
@@ -24,30 +26,30 @@ Player::~Player()
 
 void Player::Update()
 {
-    MV1SetPosition(PlyHandle, PlayerPos);       //ポジション設定
+    MV1SetPosition(PlyHandle, PlyPos);       //ポジション設定
 
     //移動処理//
     if (CheckHitKey(KEY_INPUT_LEFT))            //左移動
     {
-        if (PlayerPos.x > -10)                       //画面外でなければ
+        if (PlyPos.x > -10)
         {
-            PlayerPos.x -= FirstSpeed;              //移動
+            PlyPos.x -= FirstSpeed;
         }
     }
     else if (CheckHitKey(KEY_INPUT_RIGHT))      //右移動
     {
-        if (PlayerPos.x < 10)
+        if (PlyPos.x < 10)
         {
-            PlayerPos.x += FirstSpeed;
+            PlyPos.x += FirstSpeed;
         }
     }
     else if (CheckHitKey(KEY_INPUT_UP))         //上移動
     {
-        PlayerPos.z += FirstSpeed;
+        PlyPos.z += FirstSpeed;
     }
     else if (CheckHitKey(KEY_INPUT_DOWN))       //下移動
     {
-        PlayerPos.z -= FirstSpeed;
+        PlyPos.z -= FirstSpeed;
     }
 
 }
