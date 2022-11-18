@@ -20,7 +20,7 @@ public:
 	/// <summary>
 	/// Player更新処理
 	/// </summary>
-	void Update();
+	void Update(float deltaTime);
 
 	/// <summary>
 	/// Player描画処理
@@ -32,11 +32,12 @@ private:
 	VECTOR PlyPos;		//Player座標
 	VECTOR PlyDir;		//Player方向
 
-	VECTOR FRONT = { 0, 0, 1 };		//前方向
-	VECTOR BEHIND = { 0, 0, -1 };	//後方向
+	VECTOR UP = { 0, 0, 1 };		//前方向
+	VECTOR DOWN = { 0, 0, -1 };		//後方向
 	VECTOR RIGHT = { 1, 0, 0 };		//右方向
 	VECTOR LEFT = { -1, 0, 0 };		//左方向
 
+	VECTOR InputVec;	//合成ベクトル
 	bool KeyInput;		//キー入力判定
 };
 

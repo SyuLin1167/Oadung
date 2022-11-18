@@ -31,7 +31,7 @@ Play::~Play()
 
 SceneBase* Play::Update(float deltaTime)
 {
-    player->Update();
+    player->Update(deltaTime);
     if (CheckHitKey(KEY_INPUT_R))
     {
         return new Result();
