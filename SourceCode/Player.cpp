@@ -60,7 +60,11 @@ void Player::Update(float deltaTime)
         PlyPos = VAdd(PlyPos, VScale(InputVec, FirstSpeed * deltaTime));    //移動
     }
     
-    MV1SetPosition(PlyHandle, PlyPos);       //ポジション設定
+    MV1SetPosition(PlyHandle, PlyPos);          //ポジション設定
+
+    MATRIX RotMatY = MGetRotY(180 - (DX_PI / 180.0f));                      //逆向きなので180度回転
+
+
 }
 
 //@brief Player描画処理
