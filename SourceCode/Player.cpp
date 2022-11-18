@@ -23,7 +23,7 @@ Player::~Player()
     }
 }
 
-//@brief Player更新処理
+//@brief Player更新処理//
 
 void Player::Update(float deltaTime)
 {
@@ -57,17 +57,17 @@ void Player::Update(float deltaTime)
     {
         InputVec = VNorm(InputVec);             //ベクトルの方向成分を取得
         PlyDir = InputVec;                      //キャラの向き
-        PlyPos = VAdd(PlyPos, VScale(InputVec, FirstSpeed * deltaTime));    //移動
+        PlyPos = VAdd(PlyPos, VScale(InputVec, FirstSpeed * deltaTime));        //移動
     }
     
     MV1SetPosition(PlyHandle, PlyPos);          //ポジション設定
 
-    MATRIX RotMatY = MGetRotY(180 - (DX_PI / 180.0f));                      //逆向きなので180度回転
-
+    MATRIX RotMatY = MGetRotY(180 * (DX_PI / 180.0f));                          //逆向きなので180度回転
+    MV1SetRotationZYAxis(PlyHandle, VTransform(PlyDir, RotMatY), VGet(0.0f, 1.0f, 0.0f), 0.0f);         //モデル回転
 
 }
 
-//@brief Player描画処理
+//@brief Player描画処理//
 
 void Player::Draw()
 {
