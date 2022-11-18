@@ -28,6 +28,9 @@
     <Filter Include="ソース ファイル\Player">
       <UniqueIdentifier>{7d7c460b-a58b-4ed3-b77c-e4f22c612f18}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Math">
+      <UniqueIdentifier>{c997d6eb-3252-4139-b649-9d7e759d0d32}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SourceCode\Main.cpp">
@@ -54,6 +57,9 @@
     <ClCompile Include="SourceCode\Player.cpp">
       <Filter>ソース ファイル\Player</Filter>
     </ClCompile>
+    <ClCompile Include="SourceCode\Math.cpp">
+      <Filter>ソース ファイル\Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SourceCode\SceneBase.h">
@@ -76,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="SourceCode\Player.h">
       <Filter>ソース ファイル\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\Math.h">
+      <Filter>ソース ファイル\Math</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
