@@ -2,7 +2,7 @@
 #include"Player.h"
 #include "Result.h"
 
-//@brief PlaySceneコンストラクター//
+// @brief PlaySceneコンストラクター //
 
 Play::Play()
     :SceneBase()
@@ -17,7 +17,7 @@ Play::Play()
     player = new Player();
 }
 
-//@brief PlaySceneデストラクター//
+// @brief PlaySceneデストラクター //
 
 Play::~Play()
 {
@@ -27,7 +27,7 @@ Play::~Play()
     }
 }
 
-//@biref PlayScene更新処理//
+// @biref PlayScene更新処理 //
 
 SceneBase* Play::Update(float deltaTime)
 {
@@ -39,7 +39,7 @@ SceneBase* Play::Update(float deltaTime)
     return this;
 }
 
-//@brief PlayScene描画処理//
+// @brief PlayScene描画処理 //
 
 void Play::Draw()
 {

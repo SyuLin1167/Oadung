@@ -2,7 +2,7 @@
 #include "DxLib.h"
 #include "Play.h"
 
-//@brief TitleSceneコンストラクター//
+// @brief TitleSceneコンストラクター //
 
 Title::Title()
     :SceneBase()
@@ -10,7 +10,7 @@ Title::Title()
     BgHandle = LoadGraph("SourceCode/Assets/BackGround/Title.png");
 }
 
-//@brief TitleSceneデストラクター//
+// @brief TitleSceneデストラクター //
 
 Title::~Title()
 {
@@ -20,7 +20,7 @@ Title::~Title()
     }
 }
 
-//@brief TitleScene更新処理//
+// @brief TitleScene更新処理 //
 
 SceneBase* Title::Update(float deltaTime)
 {
@@ -31,7 +31,7 @@ SceneBase* Title::Update(float deltaTime)
     return this;
 }
 
-//@brief TitleScene描画処理//
+// @brief TitleScene描画処理 //
 
 void Title::Draw()
 {

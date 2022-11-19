@@ -1,7 +1,7 @@
 #include "SceneBase.h"
 #include "DxLib.h"
 
-//@brief ScenBaseコンストラクター//
+// @brief ScenBaseコンストラクター //
 
 SceneBase::SceneBase()
 	:BgHandle(-1)
@@ -10,7 +10,7 @@ SceneBase::SceneBase()
 {
 }
 
-//@brief SceneBaseデストラクタ―//
+// @brief SceneBaseデストラクタ― //
 
 SceneBase::~SceneBase()
 {

@@ -2,7 +2,7 @@
 #include"DxLib.h"
 #include "Title.h"
 
-//@brief ResultSceneコンストラクター//
+// @brief ResultSceneコンストラクター //
 
 Result::Result()
     :SceneBase()
@@ -10,7 +10,7 @@ Result::Result()
     BgHandle = LoadGraph("SourceCode/Assets/BackGround/Result.png");
 }
 
-//@brief ResultSceneデストラクター//
+// @brief ResultSceneデストラクター //
 
 Result::~Result()
 {
@@ -20,7 +20,7 @@ Result::~Result()
     }
 }
 
-//@brief ResultScene更新処理//
+// @brief ResultScene更新処理 //
 
 SceneBase* Result::Update(float deltaTime)
 {
@@ -31,7 +31,7 @@ SceneBase* Result::Update(float deltaTime)
     return this;
 }
 
-//@brief ResultScene描画処理//
+// @brief ResultScene描画処理 //
 
 void Result::Draw()
 {

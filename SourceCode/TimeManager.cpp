@@ -1,7 +1,6 @@
 #include "TimeManager.h"
-#include "DxLib.h"
 
-//@brief TimeManagerコンストラクタ―//
+// @brief TimeManagerコンストラクタ― //
 
 TimeManager::TimeManager()
 	:nowTime(0)
@@ -10,7 +9,7 @@ TimeManager::TimeManager()
 {
 }
 
-//@brief Time更新処理
+// @brief Time更新処理 //
 
 void TimeManager::Update()
 {
@@ -20,7 +19,7 @@ void TimeManager::Update()
 	prevTime = nowTime;								//過去の時間に現在の時間を代入
 }
 
-//@brief TimeManagerデストラクタ―//
+// @brief TimeManagerデストラクタ― //
 
 TimeManager::~TimeManager()
 {

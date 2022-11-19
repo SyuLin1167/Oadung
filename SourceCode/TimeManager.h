@@ -1,4 +1,5 @@
 #pragma once
+#include <DxLib.h>
 
 /*TimeManager‚ÌƒNƒ‰ƒX*/
 class TimeManager

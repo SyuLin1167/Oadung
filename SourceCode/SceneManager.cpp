@@ -3,7 +3,7 @@
 #include "Title.h"
 #include "Play.h"
 
-//@brief SceneManagerコンストラクター//
+// @brief SceneManagerコンストラクター //
 
 SceneManager::SceneManager()
     :nowScene(new Title())
@@ -11,20 +11,21 @@ SceneManager::SceneManager()
 {
 }
 
-//@brief SceneManagerデストラクター//
+// @brief SceneManagerデストラクター //
 
 SceneManager::~SceneManager()
 {
     delete nowScene;
 }
 
-//@brief　SceneManager更新処理//
+// @brief　SceneManager更新処理 //
 
 void SceneManager::Update()
 {
     SceneBase* tmpScene;     //一時的なシーン
     timeManager->Update();
-    //シーンの更新処理//
+
+    //---シーンの更新処理---//
     tmpScene = nowScene->Update(timeManager->DeltaTime());     //tmpSceneに現在のシーンを代入
     if (nowScene != tmpScene)                                  //現在のシーンがtmpSceneと異なっていたら
     {
@@ -33,7 +34,7 @@ void SceneManager::Update()
     }
 }
 
-//@brief 現在のシーンの描画//
+// @brief 現在のシーンの描画 //
 
 void SceneManager::Draw()
 {

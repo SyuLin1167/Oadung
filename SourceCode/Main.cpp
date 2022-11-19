@@ -16,7 +16,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 	SceneManager* sceneManager = new SceneManager();
 
-	//シーンループ//
+	//---シーンループ---//
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)		//ウィンドウが閉じられるか、ESCキーが押されるまで実行
 	{
 
