@@ -1,7 +1,7 @@
 #pragma once
 #include"DxLib.h"
 
-const int FirstSpeed = 2;	//初期速度
+const int FirstSpeed = 5;	//初期速度
 
 /*Playerのクラス*/
 class Player
