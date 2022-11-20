@@ -5,6 +5,11 @@
 const float cNear = 1.0f;       //カメラの描画範囲(近)
 const float cFar = 2000.0f;     //カメラの描画範囲(遠)
 
+//---地面グリッド描画定数---//(のちにゲームオブジェクトに移行)
+const float gridAllSize = 100.0f;
+const int divideNum = 10;
+const float gridSpace = gridAllSize / divideNum;
+
 class Player;
 
 /*プレイシーンのクラス*/
@@ -37,5 +42,9 @@ public:
 private:
     VECTOR cPos;            //カメラの視点位置
     VECTOR cTarget;         //カメラの注視点位置
+
+    //---地面グリッド描画変数---//(のちにゲームオブジェクトに移行)
+    VECTOR p1;
+    VECTOR p2;
 };
 

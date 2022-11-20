@@ -6,7 +6,7 @@
 
 Play::Play()
     :SceneBase()
-    , cPos(VGet(0.0f, 45.0f, -50.0f))
+    , cPos(VGet(0.0f, 40.0f, -70.0f))
     , cTarget(VGet(0.0f, 0.0f, 0.0f))
 {
     BgHandle = LoadGraph("SourceCode/Assets/BackGround/Play.png");
@@ -43,8 +43,23 @@ SceneBase* Play::Update(float deltaTime)
 
 void Play::Draw()
 {
+    //---地面グリッドを描画---//(のちにゲームオブジェクトに移行)
+    for (int ix = 0; ix < divideNum+1; ix++)
+    {
+        p1 = VGet(ix * gridSpace - gridAllSize * 0.5f, 0.0f, -gridAllSize * 0.5f);
+        p2= VGet(ix * gridSpace - gridAllSize * 0.5f, 0.0f, gridAllSize * 0.5f);
 
-    DrawGraph(BgX, BgY, BgHandle, TRUE);
+        DrawLine3D(p1, p2, GetColor(0, 255, 0));
+    }
+    for (int iy = 0; iy < divideNum + 1; iy++)
+    {
+        p1 = VGet( -gridAllSize * 0.5f, 0.0f,iy * gridSpace - gridAllSize * 0.5f);
+        p2 = VGet(gridAllSize * 0.5f, 0.0f,iy * gridSpace - gridAllSize * 0.5f );
+
+        DrawLine3D(p1, p2, GetColor(0, 255, 0));
+    }//描画終わり
+
+    //DrawGraph(BgX, BgY, BgHandle, TRUE);
     player->Draw();
     DrawFormatString(0, 0, GetColor(255, 255, 255), "Play画面:RでResultシーンへ移行");
 }

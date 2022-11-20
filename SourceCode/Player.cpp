@@ -5,7 +5,7 @@
 
 Player::Player()
     :PlyHandle(-1)
-    , PlyPos(VGet(0.0f, 0.0f, 0.0f))
+    ,PlyPos(VGet(0.0f, 0.0f, 0.0f))
     ,PlyDir(VGet(0.0f,0.0f,1.0f))
     ,InputVec(VGet(0,0,0))
     ,KeyInput(false)
@@ -55,14 +55,14 @@ void Player::Update(float deltaTime)
     //---移動処理---//
     if (KeyInput)
     {
-        InputVec = VNorm(InputVec);                         //ベクトルの方向成分を取得
-        PlyDir = InputVec;                                  //キャラの向き
-        PlyPos += InputVec * FirstSpeed * deltaTime;        //移動
+        InputVec = VNorm(InputVec);                                 //ベクトルの方向成分を取得
+        PlyDir = InputVec;                                          //キャラの向き
+        PlyPos += InputVec * FirstSpeed * deltaTime;                //移動
     }
     
-    MV1SetPosition(PlyHandle, PlyPos);                      //ポジション設定
+    MV1SetPosition(PlyHandle, PlyPos);                              //ポジション設定
 
-    MATRIX RotMatY = MGetRotY(180 * (DX_PI / 180.0f));      //逆向きなので180度回転
+    MATRIX RotMatY = MGetRotY(180 * (float)(DX_PI / 180.0f));       //逆向きなので180度回転
     MV1SetRotationZYAxis(PlyHandle, VTransform(PlyDir, RotMatY), VGet(0.0f, 1.0f, 0.0f), 0.0f);         //モデル回転
 
 }
