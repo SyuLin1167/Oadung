@@ -4,22 +4,22 @@
 // @brief Playerコンストラクター //
 
 Player::Player()
-    :PlyHandle(-1)
-    ,PlyPos(VGet(0.0f, 0.0f, 0.0f))
-    ,PlyDir(VGet(0.0f,0.0f,1.0f))
+    :plyHandle(-1)
+    ,plyPos(VGet(0.0f, 0.0f, 0.0f))
+    ,plyDir(VGet(0.0f,0.0f,1.0f))
     ,InputVec(VGet(0,0,0))
     ,KeyInput(false)
 {
-    PlyHandle = MV1LoadModel("SourceCode/Assets/Player/hackadoll.pmx");
+    plyHandle = MV1LoadModel("SourceCode/Assets/Player/hackadoll.pmx");
 }
 
 // @brief Playerデストラクター //
 
 Player::~Player()
 {
-    if (PlyHandle != -1)
+    if (plyHandle != -1)
     {
-        MV1DeleteModel(PlyHandle);
+        MV1DeleteModel(plyHandle);
     }
 }
 
@@ -56,14 +56,14 @@ void Player::Update(float deltaTime)
     if (KeyInput)
     {
         InputVec = VNorm(InputVec);                                 //ベクトルの方向成分を取得
-        PlyDir = InputVec;                                          //キャラの向き
-        PlyPos += InputVec * FirstSpeed * deltaTime;                //移動
+        plyDir = InputVec;                                          //キャラの向き
+        plyPos += InputVec * FirstSpeed * deltaTime;                //移動
     }
     
-    MV1SetPosition(PlyHandle, PlyPos);                              //ポジション設定
+    MV1SetPosition(plyHandle, plyPos);                              //ポジション設定
 
     MATRIX RotMatY = MGetRotY(180 * (float)(DX_PI / 180.0f));       //逆向きなので180度回転
-    MV1SetRotationZYAxis(PlyHandle, VTransform(PlyDir, RotMatY), VGet(0.0f, 1.0f, 0.0f), 0.0f);         //モデル回転
+    MV1SetRotationZYAxis(plyHandle, VTransform(plyDir, RotMatY), VGet(0.0f, 1.0f, 0.0f), 0.0f);         //モデル回転
 
 }
 
@@ -71,5 +71,5 @@ void Player::Update(float deltaTime)
 
 void Player::Draw()
 {
-    MV1DrawModel(PlyHandle);
+    MV1DrawModel(plyHandle);
 }
