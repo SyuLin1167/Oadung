@@ -26,6 +26,7 @@
     <ClCompile Include="SourceCode\Result.cpp" />
     <ClCompile Include="SourceCode\SceneBase.cpp" />
     <ClCompile Include="SourceCode\SceneManager.cpp" />
+    <ClCompile Include="SourceCode\Sniper.cpp" />
     <ClCompile Include="SourceCode\TimeManager.cpp" />
     <ClCompile Include="SourceCode\Title.cpp" />
   </ItemGroup>
@@ -36,6 +37,7 @@
     <ClInclude Include="SourceCode\Result.h" />
     <ClInclude Include="SourceCode\SceneBase.h" />
     <ClInclude Include="SourceCode\SceneManager.h" />
+    <ClInclude Include="SourceCode\Sniper.h" />
     <ClInclude Include="SourceCode\TimeManager.h" />
     <ClInclude Include="SourceCode\Title.h" />
   </ItemGroup>

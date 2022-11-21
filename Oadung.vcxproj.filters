@@ -25,11 +25,23 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="ソース ファイル\Player">
-      <UniqueIdentifier>{7d7c460b-a58b-4ed3-b77c-e4f22c612f18}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Math">
       <UniqueIdentifier>{c997d6eb-3252-4139-b649-9d7e759d0d32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Chara">
+      <UniqueIdentifier>{949a8343-a9cd-4353-9589-e7c82d965a6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Chara\FarATK">
+      <UniqueIdentifier>{63df8e59-d783-47e8-bd9c-e09e9a0d8153}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Chara\FarATK\Sniper">
+      <UniqueIdentifier>{817d353b-8da4-4662-a909-d6b57229f197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Chara\NearATK">
+      <UniqueIdentifier>{d0dc208f-edb0-4202-8b34-f42e9bf90660}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Chara\NearATK\Player">
+      <UniqueIdentifier>{7d7c460b-a58b-4ed3-b77c-e4f22c612f18}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -55,10 +67,13 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\Player.cpp">
-      <Filter>ソース ファイル\Player</Filter>
+      <Filter>ソース ファイル\Chara\NearATK\Player</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\Math.cpp">
       <Filter>ソース ファイル\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\Sniper.cpp">
+      <Filter>ソース ファイル\Chara\FarATK\Sniper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -81,10 +96,13 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SourceCode\Player.h">
-      <Filter>ソース ファイル\Player</Filter>
+      <Filter>ソース ファイル\Chara\NearATK\Player</Filter>
     </ClInclude>
     <ClInclude Include="SourceCode\Math.h">
       <Filter>ソース ファイル\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\Sniper.h">
+      <Filter>ソース ファイル\Chara\FarATK\Sniper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

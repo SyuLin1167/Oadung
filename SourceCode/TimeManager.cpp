@@ -6,8 +6,7 @@ TimeManager::TimeManager()
 	:nowTime(0)
 	, prevTime(0)
 	, deltaTime(0)
-{
-}
+{}
 
 // @brief TimeXVˆ— //
 

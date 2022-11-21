@@ -1,5 +1,6 @@
 #include "Play.h"
 #include"Player.h"
+#include"Sniper.h"
 #include "Result.h"
 
 // @brief PlaySceneコンストラクター //
@@ -15,6 +16,7 @@ Play::Play()
     SetCameraPositionAndTarget_UpVecY(cPos, cTarget);   //視点からターゲットを見る角度にカメラ設置
 
     player = new Player();
+    sniper = new Sniper();
 }
 
 // @brief PlaySceneデストラクター //
@@ -32,6 +34,7 @@ Play::~Play()
 SceneBase* Play::Update(float deltaTime)
 {
     player->Update(deltaTime);
+    sniper->Update(deltaTime);
     if (CheckHitKey(KEY_INPUT_R))
     {
         return new Result();
@@ -61,5 +64,6 @@ void Play::Draw()
 
     //DrawGraph(BgX, BgY, BgHandle, TRUE);
     player->Draw();
+    sniper->Draw();
     DrawFormatString(0, 0, GetColor(255, 255, 255), "Play画面:RでResultシーンへ移行");
 }

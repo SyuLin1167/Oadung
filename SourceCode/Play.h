@@ -1,5 +1,5 @@
 #pragma once
-#include "DxLib.h"
+#include <DxLib.h>
 #include"SceneBase.h"
 
 const float cNear = 1.0f;       //カメラの描画範囲(近)
@@ -11,11 +11,13 @@ const int divideNum = 10;
 const float gridSpace = gridAllSize / divideNum;
 
 class Player;
+class Sniper;
 
 /*プレイシーンのクラス*/
 class Play :public SceneBase
 {
     Player* player;
+    Sniper* sniper;
 public:
     /// <summary>
     /// コンストラクター
