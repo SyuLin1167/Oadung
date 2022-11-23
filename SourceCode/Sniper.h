@@ -25,8 +25,24 @@ public:
 	/// </summary>
 	void Draw();
 
+	/// <summary>
+	/// Sniper死亡判定
+	/// </summary>
+	/// <returns>死亡フラグ</returns>
+	bool IsDead() { return isDead; }
+
+	/// <summary>
+	/// モデル削除
+	/// </summary>
+	static void UnloadModel();
+
 private:
 	int snpHandle;		//Sniper画像ハンドル
 	VECTOR snpPos;		//Sniper座標
+
+	bool isDead;		//死亡フラグ
+
+	int MouseX;
+	int MouseY;
 };
 
