@@ -38,6 +38,7 @@ public:
 
 private:
 	int snpHandle;		//Sniper画像ハンドル
+	int snpDuplicate;	//複製モデル(読み込み不要)
 	VECTOR snpPos;		//Sniper座標
 
 	bool isDead;		//死亡フラグ
