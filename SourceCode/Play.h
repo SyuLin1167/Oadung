@@ -18,6 +18,7 @@ class Play :public SceneBase
 {
     Player* player;
     Sniper* sniper;
+    Sniper* snpArray[5] = { nullptr };
 public:
     /// <summary>
     /// コンストラクター

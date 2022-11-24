@@ -34,7 +34,31 @@ Play::~Play()
 SceneBase* Play::Update(float deltaTime)
 {
     player->Update(deltaTime);
-    sniper->Update(deltaTime);
+
+    if (CheckHitKey(KEY_INPUT_RETURN))      //エンターキーでモデル描画
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (snpArray[i] == nullptr)
+            {
+                snpArray[i] = new Sniper();
+                break;
+            }
+        }
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        if (snpArray[i] != nullptr)
+        {
+            sniper->Update(deltaTime);
+            if (snpArray[i]->IsDead())
+            {
+                delete snpArray[i];
+                snpArray[i] = nullptr;
+            }
+        }
+    }
+
     if (CheckHitKey(KEY_INPUT_R))
     {
         return new Result();
@@ -64,6 +88,13 @@ void Play::Draw()
 
     //DrawGraph(BgX, BgY, BgHandle, TRUE);
     player->Draw();
-    sniper->Draw();
+
+    for (int i = 0; i < 5; i++)
+    {
+        if (snpArray[i] != nullptr)
+        {
+            sniper->Draw();
+        }
+    }
     DrawFormatString(0, 0, GetColor(255, 255, 255), "Play画面:RでResultシーンへ移行");
 }

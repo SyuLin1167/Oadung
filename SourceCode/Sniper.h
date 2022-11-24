@@ -1,6 +1,8 @@
 #pragma once
 #include <DxLib.h>
 
+
+
 /*Sniperのクラス*/
 class Sniper
 {
@@ -37,7 +39,7 @@ public:
 	static void UnloadModel();
 
 private:
-	int snpHandle;		//Sniper画像ハンドル
+	static int snpHandle;		//Sniper画像ハンドル
 	int snpDuplicate;	//複製モデル(読み込み不要)
 	VECTOR snpPos;		//Sniper座標
 
@@ -45,5 +47,6 @@ private:
 
 	int MouseX;
 	int MouseY;
+	float Time;
 };
 

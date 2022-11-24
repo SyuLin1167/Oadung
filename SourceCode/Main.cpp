@@ -1,6 +1,7 @@
 #include"DxLib.h"
 #include"SceneManager.h"
 #include"TimeManager.h"
+#include"Sniper.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -27,6 +28,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		sceneManager->Draw();			//描画処理
 		ScreenFlip();					//裏画面の内容を表描画に反映
 	}
+	Sniper::UnloadModel();
 
 	DxLib_End();						//Dxライブラリの後処理
 
