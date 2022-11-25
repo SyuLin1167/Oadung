@@ -12,7 +12,7 @@ Play::Play()
 {
     BgHandle = LoadGraph("SourceCode/Assets/BackGround/Play.png");
 
-    SetCameraNearFar(cNear, cFar);      //奥行き0.1～1000までをカメラの描画範囲とする
+    SetCameraNearFar(cNear, cFar);                      //カメラの描画範囲設定
     SetCameraPositionAndTarget_UpVecY(cPos, cTarget);   //視点からターゲットを見る角度にカメラ設置
 
     player = new Player();

@@ -43,6 +43,9 @@
     <Filter Include="ソース ファイル\Chara\NearATK\Player">
       <UniqueIdentifier>{7d7c460b-a58b-4ed3-b77c-e4f22c612f18}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Chara\Enemy">
+      <UniqueIdentifier>{c6dd2afe-8c1c-4288-9fe6-369c5efc62b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SourceCode\Main.cpp">
