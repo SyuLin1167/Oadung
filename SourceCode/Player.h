@@ -1,7 +1,7 @@
 #pragma once
 #include<DxLib.h>
 
-const int FirstSpeed = 5;	//初期速度
+const float FirstSpeed = 5.0f;	//初期速度
 
 /*Playerのクラス*/
 class Player
@@ -28,7 +28,7 @@ public:
 	void Draw();
 
 private:
-	int plyHandle;		//Player画像ハンドル
+	int plyHandle;		//Playerモデルハンドル
 	VECTOR plyPos;		//Player座標
 	VECTOR plyDir;		//Player方向
 

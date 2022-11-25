@@ -46,6 +46,12 @@
     <Filter Include="ソース ファイル\Chara\Enemy">
       <UniqueIdentifier>{c6dd2afe-8c1c-4288-9fe6-369c5efc62b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Time">
+      <UniqueIdentifier>{cb49b124-bce2-4d9d-9fbd-6066c4d0f38b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Object">
+      <UniqueIdentifier>{81e52de9-1ac9-4a1d-9c72-cb3fa3eddc21}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SourceCode\Main.cpp">
@@ -66,17 +72,26 @@
     <ClCompile Include="SourceCode\Result.cpp">
       <Filter>ソース ファイル\Scene\Result</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\TimeManager.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="SourceCode\Player.cpp">
       <Filter>ソース ファイル\Chara\NearATK\Player</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\Math.cpp">
       <Filter>ソース ファイル\Math</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\Sniper.cpp">
+    <ClCompile Include="SourceCode\Bow.cpp">
       <Filter>ソース ファイル\Chara\FarATK\Sniper</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\Enemy.cpp">
+      <Filter>ソース ファイル\Chara\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\TimeManager.cpp">
+      <Filter>ソース ファイル\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\GameObject.cpp">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\ObjectTag.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,17 +110,26 @@
     <ClInclude Include="SourceCode\Result.h">
       <Filter>ソース ファイル\Scene\Result</Filter>
     </ClInclude>
-    <ClInclude Include="SourceCode\TimeManager.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="SourceCode\Player.h">
       <Filter>ソース ファイル\Chara\NearATK\Player</Filter>
     </ClInclude>
     <ClInclude Include="SourceCode\Math.h">
       <Filter>ソース ファイル\Math</Filter>
     </ClInclude>
-    <ClInclude Include="SourceCode\Sniper.h">
+    <ClInclude Include="SourceCode\Bow.h">
       <Filter>ソース ファイル\Chara\FarATK\Sniper</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\Enemy.h">
+      <Filter>ソース ファイル\Chara\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\TimeManager.h">
+      <Filter>ソース ファイル\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\GameObject.h">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\ObjectTag.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

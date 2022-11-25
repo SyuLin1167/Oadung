@@ -11,13 +11,15 @@ const int divideNum = 10;
 const float gridSpace = gridAllSize / divideNum;
 
 class Player;
-class Sniper;
+class Bow;
+class Enemy;
 
 /*プレイシーンのクラス*/
 class Play :public SceneBase
 {
     Player* player;
-    Sniper* snpArray[5] = { nullptr };
+    Bow* bowArray[5] = { nullptr };
+    Enemy* enemy;
 public:
     /// <summary>
     /// コンストラクター

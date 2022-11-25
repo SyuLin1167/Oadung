@@ -1,6 +1,7 @@
 #include "Play.h"
-#include"Player.h"
-#include"Sniper.h"
+#include "Player.h"
+#include "Bow.h"
+#include "Enemy.h"
 #include "Result.h"
 
 // @brief PlaySceneコンストラクター //
@@ -16,6 +17,7 @@ Play::Play()
     SetCameraPositionAndTarget_UpVecY(cPos, cTarget);   //視点からターゲットを見る角度にカメラ設置
 
     player = new Player();
+    enemy = new Enemy();
 }
 
 // @brief PlaySceneデストラクター //
@@ -33,15 +35,16 @@ Play::~Play()
 SceneBase* Play::Update(float deltaTime)
 {
     player->Update(deltaTime);
+    enemy->Update(deltaTime);
 
     putTime -= deltaTime;
     if (putTime < 0.0f&&GetMouseInput()&MOUSE_INPUT_LEFT)          //エンターキーが押されたら
     {
         for (int i = 0; i < 5; i++)             //ポインタの空きを検索
         {
-            if (snpArray[i] == nullptr)         //空きを見つけたら
+            if (bowArray[i] == nullptr)         //空きを見つけたら
             {
-                snpArray[i] = new Sniper();     //新規作成
+                bowArray[i] = new Bow();     //新規作成
                 putTime = putInterval;
                 break;                          //for文を抜ける
             }
@@ -49,13 +52,13 @@ SceneBase* Play::Update(float deltaTime)
     }
     for (int i = 0; i < 5; i++)
     {
-        if (snpArray[i] != nullptr)
+        if (bowArray[i] != nullptr)
         {
-            snpArray[i]->Update(deltaTime);
-            if (snpArray[i]->IsDead())
+            bowArray[i]->Update(deltaTime);
+            if (bowArray[i]->IsDead())
             {
-                delete snpArray[i];
-                snpArray[i] = nullptr;
+                delete bowArray[i];
+                bowArray[i] = nullptr;
             }
         }
     }
@@ -89,12 +92,13 @@ void Play::Draw()
 
     //DrawGraph(BgX, BgY, BgHandle, TRUE);
     player->Draw();
+    enemy->Draw();
 
     for (int i = 0; i < 5; i++)
     {
-        if (snpArray[i] != nullptr)
+        if (bowArray[i] != nullptr)
         {
-            snpArray[i]->Draw();
+            bowArray[i]->Draw();
         }
     }
     DrawFormatString(0, 0, GetColor(255, 255, 255), "Play画面:RでResultシーンへ移行");
