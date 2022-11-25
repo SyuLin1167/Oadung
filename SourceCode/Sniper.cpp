@@ -14,6 +14,9 @@ Sniper::Sniper()
 	snpHandle = MV1LoadModel("SourceCode/Assets/Sniper/SampleModel.MV1");
 	snpDuplicate = MV1DuplicateModel(snpHandle);
 	MV1SetScale(snpDuplicate, VGet(0.1f, 0.1f, 0.1f));					//モデルのサイズ設定
+	GetMousePoint(&MouseX, &MouseY);								//マウスの位置を取得
+	snpPos = VGet(((float)MouseX - 640) / 10, 0.0f, (-(float)MouseY + 512) / 5);
+	MV1SetPosition(snpDuplicate, snpPos);							//ポジション設定
 }
 
 // @brief Sniperデストラクタ― //
@@ -30,16 +33,13 @@ Sniper::~Sniper()
 
 void Sniper::Update(float deltaTime)
 {
-	GetMousePoint(&MouseX, &MouseY);								//マウスの位置を取得
-	snpPos = VGet(((float)MouseX-640)/10,0.0f,( - (float)MouseY + 512)/5);
+
 	Time += deltaTime;
 	if (Time >= 2.0f)
 	{
 		isDead = true;
 		Time = 0;
 	}
-	MV1SetPosition(snpDuplicate, snpPos);                              //ポジション設定
-
 }
 
 // @brief Sniper描画処理 //
@@ -47,7 +47,6 @@ void Sniper::Update(float deltaTime)
 void Sniper::Draw()
 {
 	DrawFormatString(0, 100, GetColor(255, 255, 0), "mousepos:%d,%d",MouseX,MouseY);
-	DrawFormatString(0, 50, GetColor(255, 255, 0), "snphandle:%d", snpPos.x);
 	MV1DrawModel(snpDuplicate);
 }
 

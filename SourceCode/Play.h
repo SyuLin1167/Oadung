@@ -17,7 +17,6 @@ class Sniper;
 class Play :public SceneBase
 {
     Player* player;
-    Sniper* sniper;
     Sniper* snpArray[5] = { nullptr };
 public:
     /// <summary>
@@ -49,5 +48,8 @@ private:
     //---地面グリッド描画変数---//(のちにゲームオブジェクトに移行)
     VECTOR p1;
     VECTOR p2;
+
+    const float putInterval = 1.0f;
+    float putTime = 0.0f;
 };
 

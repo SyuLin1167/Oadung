@@ -16,7 +16,6 @@ Play::Play()
     SetCameraPositionAndTarget_UpVecY(cPos, cTarget);   //視点からターゲットを見る角度にカメラ設置
 
     player = new Player();
-    sniper = new Sniper();
 }
 
 // @brief PlaySceneデストラクター //
@@ -35,14 +34,16 @@ SceneBase* Play::Update(float deltaTime)
 {
     player->Update(deltaTime);
 
-    if (CheckHitKey(KEY_INPUT_RETURN))      //エンターキーでモデル描画
+    putTime -= deltaTime;
+    if (putTime < 0.0f&&GetMouseInput()&MOUSE_INPUT_LEFT)          //エンターキーが押されたら
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++)             //ポインタの空きを検索
         {
-            if (snpArray[i] == nullptr)
+            if (snpArray[i] == nullptr)         //空きを見つけたら
             {
-                snpArray[i] = new Sniper();
-                break;
+                snpArray[i] = new Sniper();     //新規作成
+                putTime = putInterval;
+                break;                          //for文を抜ける
             }
         }
     }
@@ -50,7 +51,7 @@ SceneBase* Play::Update(float deltaTime)
     {
         if (snpArray[i] != nullptr)
         {
-            sniper->Update(deltaTime);
+            snpArray[i]->Update(deltaTime);
             if (snpArray[i]->IsDead())
             {
                 delete snpArray[i];
@@ -74,14 +75,14 @@ void Play::Draw()
     for (int ix = 0; ix < divideNum+1; ix++)
     {
         p1 = VGet(ix * gridSpace - gridAllSize * 0.5f, 0.0f, -gridAllSize * 0.5f);
-        p2= VGet(ix * gridSpace - gridAllSize * 0.5f, 0.0f, gridAllSize * 0.5f);
+        p2 = VGet(ix * gridSpace - gridAllSize * 0.5f, 0.0f, gridAllSize * 0.5f);
 
         DrawLine3D(p1, p2, GetColor(0, 255, 0));
     }
     for (int iy = 0; iy < divideNum + 1; iy++)
     {
-        p1 = VGet( -gridAllSize * 0.5f, 0.0f,iy * gridSpace - gridAllSize * 0.5f);
-        p2 = VGet(gridAllSize * 0.5f, 0.0f,iy * gridSpace - gridAllSize * 0.5f );
+        p1 = VGet(-gridAllSize * 0.5f, 0.0f, iy * gridSpace - gridAllSize * 0.5f);
+        p2 = VGet(gridAllSize * 0.5f, 0.0f, iy * gridSpace - gridAllSize * 0.5f);
 
         DrawLine3D(p1, p2, GetColor(0, 255, 0));
     }//描画終わり
@@ -93,7 +94,7 @@ void Play::Draw()
     {
         if (snpArray[i] != nullptr)
         {
-            sniper->Draw();
+            snpArray[i]->Draw();
         }
     }
     DrawFormatString(0, 0, GetColor(255, 255, 255), "Play画面:RでResultシーンへ移行");
