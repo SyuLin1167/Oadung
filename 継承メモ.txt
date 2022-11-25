@@ -1,0 +1,48 @@
+Player
+関数
+・Update()		/*__
+・Draw()			/*__
+変数
+・const float firstSpeed/-.
+・int plyHandle		/-..		
+・VECTOR plyPos		/-..
+・VECTOR plyDir		/-.
+・VECTOR UP
+・VECTOR DOWN
+・VECTOR LEFT
+・VECTOR RIGHT
+・VECTOR InputVec
+・bool KeyInput
+
+Bow
+関数
+・Update()		/*__
+・Draw()			/*__
+・IsDead()		/-.
+・UnloadModel()		/-.
+変数
+・static int bowHandle	/-.
+・int bowDuplicate	/-..
+・VECTOR bowPos		/-..
+・bool isDead		/-.
+・int MouseX
+・int MouseY
+・float Time
+
+Enemy
+関数
+・Update()		/*__
+・Draw()			/*__
+・IsDead()		/-.
+・UnloadModel()		/-.
+変数
+・const float firstSpeed/-.
+・static int emyHandle	/-.
+・int emyDuplicate	/-..
+・VECTOR emyPos		/-..
+・VECTOR emyDir		/-.
+・bool isDead		/-.
+
+/*　共有の名前だが中身が違う
+/-　共有の名前と中身
+_&. 共有しているクラスの数
