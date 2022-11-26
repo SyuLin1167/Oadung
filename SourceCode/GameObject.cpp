@@ -2,10 +2,12 @@
 
 // @brief コンストラクター //
 
-GameObject::GameObject()
-    :Position()
-    ,Dir()
-    ,modelHandle(-1)
+GameObject::GameObject(ObjectTag tag)
+    :objTag(tag)
+    ,objHandle(-1)
+    ,objPos(VGet(0.0f,0.0f,0.0f))
+    ,objDir(VGet(0.0f,0.0f,0.0f))
+    ,objSpeed(0.0f)
     ,isAlive(true)
 {
 }
@@ -13,9 +15,9 @@ GameObject::GameObject()
 // @brief デストラクター //
 GameObject::~GameObject()
 {
-    if (modelHandle != -1)
+    if (objHandle != -1)
     {
-        MV1DeleteModel(modelHandle);
+        MV1DeleteModel(objHandle);
     }
 }
 

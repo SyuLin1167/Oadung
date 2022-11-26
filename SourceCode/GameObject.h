@@ -1,15 +1,17 @@
 #pragma once
 #include<DxLib.h>
 #include"Math.h"
+#include"ObjectTag.h"
 
 /*親クラス*/
 class GameObject
 {
 public:
     /// <summary>
-    /// コンストラクター
+    /// コンストラクタ―
     /// </summary>
-    GameObject();
+    /// <param name="tag">:タグ</param>
+    GameObject(ObjectTag tag);
 
     /// <summary>
     /// デストラクター
@@ -20,25 +22,25 @@ public:
     /// 座標取得
     /// </summary>
     /// <returns>セットされた座標</returns>
-    const VECTOR& GetPosition()const { return Position; }
+    const VECTOR& GetPosition()const { return objPos; }
 
     /// <summary>
     /// 座標設定
     /// </summary>
     /// <param name="setPos">:座標にセットする値</param>
-    void SetPosition(const VECTOR setPos) { Position = setPos; }
+    void SetPosition(const VECTOR setPos) { objPos = setPos; }
 
     /// <summary>
     /// 方向取得
     /// </summary>
     /// <returns>セットされた向き</returns>
-    const VECTOR& GetDir()const { return Dir; }
+    const VECTOR& GetDir()const { return objDir; }
 
     /// <summary>
     /// 方向設定
     /// </summary>
     /// <param name="dir">:向きにセットする値</param>
-    void SetDir(const VECTOR dir) { Dir = dir; }
+    void SetDir(const VECTOR dir) { objDir = dir; }
 
     /// <summary>
     /// 生死判定
@@ -64,9 +66,13 @@ public:
     virtual void Draw();
 
 protected:
-    VECTOR Position;        //ワールド座標
-    VECTOR Dir;             //ワールド方向
-    int modelHandle;        //モデルハンドル
+    ObjectTag objTag;       //オブジェクトの種類
+    int objHandle;        //モデルハンドル
+    VECTOR objPos;          //ワールド座標
+    VECTOR objDir;             //ワールド方向
+
+    float objSpeed;
+
     bool isAlive;           //生死状態
 };
 
