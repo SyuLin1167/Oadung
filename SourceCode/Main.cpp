@@ -1,6 +1,6 @@
 #include"DxLib.h"
 #include"SceneManager.h"
-#include"TimeManager.h"
+#include"Time/TimeManager.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {

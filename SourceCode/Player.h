@@ -1,6 +1,5 @@
 #pragma once
 #include<DxLib.h>
-#include"Math.h"
 #include"GameObject.h"
 
 

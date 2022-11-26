@@ -66,5 +66,5 @@ void Player::Update(float deltaTime)
 
 void Player::Draw()
 {
-    MV1DrawModel(objHandle);
+    MV1DrawModel(objHandle);        //ƒ‚ƒfƒ‹•`‰æ
 }

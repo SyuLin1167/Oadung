@@ -1,6 +1,6 @@
 #pragma once
 #include"SceneBase.h"
-#include"TimeManager.h"
+#include"Time/TimeManager.h"
 
 
 /*シーンマネージャーのクラス*/

@@ -52,16 +52,13 @@
     <Filter Include="ソース ファイル\Chara\FarATK\Archer">
       <UniqueIdentifier>{817d353b-8da4-4662-a909-d6b57229f197}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Collision">
+      <UniqueIdentifier>{e68d7863-63fd-42fc-bfed-721c5e20051f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SourceCode\Main.cpp">
       <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceCode\SceneBase.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceCode\SceneManager.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\Play.cpp">
       <Filter>ソース ファイル\Scene\Play</Filter>
@@ -75,29 +72,32 @@
     <ClCompile Include="SourceCode\Player.cpp">
       <Filter>ソース ファイル\Chara\NearATK\Player</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\Math.cpp">
-      <Filter>ソース ファイル\Math</Filter>
-    </ClCompile>
     <ClCompile Include="SourceCode\Archer.cpp">
       <Filter>ソース ファイル\Chara\FarATK\Archer</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\Enemy.cpp">
       <Filter>ソース ファイル\Chara\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\TimeManager.cpp">
-      <Filter>ソース ファイル\Time</Filter>
-    </ClCompile>
     <ClCompile Include="SourceCode\GameObject.cpp">
       <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
+    <ClCompile Include="SourceCode\Collision.cpp">
+      <Filter>ソース ファイル\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\Math\Math.cpp">
+      <Filter>ソース ファイル\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\SceneBase.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\SceneManager.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\Time\TimeManager.cpp">
+      <Filter>ソース ファイル\Time</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SourceCode\SceneBase.h">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceCode\SceneManager.h">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="SourceCode\Play.h">
       <Filter>ソース ファイル\Scene\Play</Filter>
     </ClInclude>
@@ -110,23 +110,32 @@
     <ClInclude Include="SourceCode\Player.h">
       <Filter>ソース ファイル\Chara\NearATK\Player</Filter>
     </ClInclude>
-    <ClInclude Include="SourceCode\Math.h">
-      <Filter>ソース ファイル\Math</Filter>
-    </ClInclude>
     <ClInclude Include="SourceCode\Archer.h">
       <Filter>ソース ファイル\Chara\FarATK\Archer</Filter>
     </ClInclude>
     <ClInclude Include="SourceCode\Enemy.h">
       <Filter>ソース ファイル\Chara\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="SourceCode\TimeManager.h">
-      <Filter>ソース ファイル\Time</Filter>
-    </ClInclude>
     <ClInclude Include="SourceCode\GameObject.h">
       <Filter>ソース ファイル\Object</Filter>
     </ClInclude>
     <ClInclude Include="SourceCode\ObjectTag.h">
       <Filter>ソース ファイル\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\Collision.h">
+      <Filter>ソース ファイル\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\Math\Math.h">
+      <Filter>ソース ファイル\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\SceneBase.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\SceneManager.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\Time\TimeManager.h">
+      <Filter>ソース ファイル\Time</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

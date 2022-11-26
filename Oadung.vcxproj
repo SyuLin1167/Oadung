@@ -19,31 +19,33 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SourceCode\Collision.cpp" />
     <ClCompile Include="SourceCode\Enemy.cpp" />
     <ClCompile Include="SourceCode\GameObject.cpp" />
     <ClCompile Include="SourceCode\Main.cpp" />
-    <ClCompile Include="SourceCode\Math.cpp" />
+    <ClCompile Include="SourceCode\Math\Math.cpp" />
     <ClCompile Include="SourceCode\Play.cpp" />
     <ClCompile Include="SourceCode\Player.cpp" />
     <ClCompile Include="SourceCode\Result.cpp" />
+    <ClCompile Include="SourceCode\Archer.cpp" />
     <ClCompile Include="SourceCode\SceneBase.cpp" />
     <ClCompile Include="SourceCode\SceneManager.cpp" />
-    <ClCompile Include="SourceCode\Archer.cpp" />
-    <ClCompile Include="SourceCode\TimeManager.cpp" />
+    <ClCompile Include="SourceCode\Time\TimeManager.cpp" />
     <ClCompile Include="SourceCode\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SourceCode\Collision.h" />
     <ClInclude Include="SourceCode\Enemy.h" />
     <ClInclude Include="SourceCode\GameObject.h" />
-    <ClInclude Include="SourceCode\Math.h" />
+    <ClInclude Include="SourceCode\Math\Math.h" />
     <ClInclude Include="SourceCode\ObjectTag.h" />
     <ClInclude Include="SourceCode\Play.h" />
     <ClInclude Include="SourceCode\Player.h" />
     <ClInclude Include="SourceCode\Result.h" />
+    <ClInclude Include="SourceCode\Archer.h" />
     <ClInclude Include="SourceCode\SceneBase.h" />
     <ClInclude Include="SourceCode\SceneManager.h" />
-    <ClInclude Include="SourceCode\Archer.h" />
-    <ClInclude Include="SourceCode\TimeManager.h" />
+    <ClInclude Include="SourceCode\Time\TimeManager.h" />
     <ClInclude Include="SourceCode\Title.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
