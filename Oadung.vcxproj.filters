@@ -34,9 +34,6 @@
     <Filter Include="ソース ファイル\Chara\FarATK">
       <UniqueIdentifier>{63df8e59-d783-47e8-bd9c-e09e9a0d8153}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Chara\FarATK\Sniper">
-      <UniqueIdentifier>{817d353b-8da4-4662-a909-d6b57229f197}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Chara\NearATK">
       <UniqueIdentifier>{d0dc208f-edb0-4202-8b34-f42e9bf90660}</UniqueIdentifier>
     </Filter>
@@ -51,6 +48,9 @@
     </Filter>
     <Filter Include="ソース ファイル\Object">
       <UniqueIdentifier>{81e52de9-1ac9-4a1d-9c72-cb3fa3eddc21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Chara\FarATK\Archer">
+      <UniqueIdentifier>{817d353b-8da4-4662-a909-d6b57229f197}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -78,8 +78,8 @@
     <ClCompile Include="SourceCode\Math.cpp">
       <Filter>ソース ファイル\Math</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\Bow.cpp">
-      <Filter>ソース ファイル\Chara\FarATK\Sniper</Filter>
+    <ClCompile Include="SourceCode\Archer.cpp">
+      <Filter>ソース ファイル\Chara\FarATK\Archer</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\Enemy.cpp">
       <Filter>ソース ファイル\Chara\Enemy</Filter>
@@ -89,9 +89,6 @@
     </ClCompile>
     <ClCompile Include="SourceCode\GameObject.cpp">
       <Filter>ソース ファイル\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceCode\ObjectTag.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,8 +113,8 @@
     <ClInclude Include="SourceCode\Math.h">
       <Filter>ソース ファイル\Math</Filter>
     </ClInclude>
-    <ClInclude Include="SourceCode\Bow.h">
-      <Filter>ソース ファイル\Chara\FarATK\Sniper</Filter>
+    <ClInclude Include="SourceCode\Archer.h">
+      <Filter>ソース ファイル\Chara\FarATK\Archer</Filter>
     </ClInclude>
     <ClInclude Include="SourceCode\Enemy.h">
       <Filter>ソース ファイル\Chara\Enemy</Filter>
@@ -129,7 +126,7 @@
       <Filter>ソース ファイル\Object</Filter>
     </ClInclude>
     <ClInclude Include="SourceCode\ObjectTag.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ソース ファイル\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

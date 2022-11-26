@@ -1,6 +1,6 @@
 #include "Play.h"
 #include "Player.h"
-#include "Bow.h"
+#include "Archer.h"
 #include "Enemy.h"
 #include "Result.h"
 
@@ -42,9 +42,9 @@ SceneBase* Play::Update(float deltaTime)
     {
         for (int i = 0; i < 5; i++)             //ポインタの空きを検索
         {
-            if (bowArray[i] == nullptr)         //空きを見つけたら
+            if (arcArray[i] == nullptr)         //空きを見つけたら
             {
-                bowArray[i] = new Bow();     //新規作成
+                arcArray[i] = new Archer();     //新規作成
                 putTime = putInterval;
                 break;                          //for文を抜ける
             }
@@ -52,13 +52,13 @@ SceneBase* Play::Update(float deltaTime)
     }
     for (int i = 0; i < 5; i++)
     {
-        if (bowArray[i] != nullptr)
+        if (arcArray[i] != nullptr)
         {
-            bowArray[i]->Update(deltaTime);
-            if (bowArray[i]->IsDead())
+            arcArray[i]->Update(deltaTime);
+            if (!arcArray[i]->IsAlive())
             {
-                delete bowArray[i];
-                bowArray[i] = nullptr;
+                delete arcArray[i];
+                arcArray[i] = nullptr;
             }
         }
     }
@@ -96,9 +96,9 @@ void Play::Draw()
 
     for (int i = 0; i < 5; i++)
     {
-        if (bowArray[i] != nullptr)
+        if (arcArray[i] != nullptr)
         {
-            bowArray[i]->Draw();
+            arcArray[i]->Draw();
         }
     }
     DrawFormatString(0, 0, GetColor(255, 255, 255), "Play画面:RでResultシーンへ移行");

@@ -1,10 +1,11 @@
 #pragma once
 #include<DxLib.h>
+#include"Math.h"
+#include"GameObject.h"
 
-const float FirstSpeed = 5.0f;	//初期速度
 
 /*Playerのクラス*/
-class Player
+class Player :public GameObject
 {
 public:
 	/// <summary>
@@ -20,18 +21,15 @@ public:
 	/// <summary>
 	/// Player更新処理
 	/// </summary>
-	void Update(float deltaTime);
+	/// <param name="deltaTime">:フレームレート</param>
+	void Update(float deltaTime) override;
 
 	/// <summary>
 	/// Player描画処理
 	/// </summary>
-	void Draw();
+	void Draw() override;
 
 private:
-	int plyHandle;		//Playerモデルハンドル
-	VECTOR plyPos;		//Player座標
-	VECTOR plyDir;		//Player方向
-
 	VECTOR UP = { 0, 0, 0.9f };			//前方向
 	VECTOR DOWN = { 0, 0, -0.9f };		//後方向
 	VECTOR RIGHT = { 0.9f, 0, 0 };		//右方向

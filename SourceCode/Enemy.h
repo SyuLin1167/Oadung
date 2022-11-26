@@ -1,10 +1,9 @@
 #pragma once
 #include<DxLib.h>
+#include"GameObject.h"
 
-const float firstSpeed = 5.0f;       //初速度
-
-    /*Enemyのクラス*/
-class Enemy
+/*Enemyのクラス*/
+class Enemy :public GameObject
 {
 public:
     /// <summary>
@@ -27,22 +26,7 @@ public:
     /// </summary>
     void Draw();
 
-    /// <summary>
-    /// Enemy死亡判定
-    /// </summary>
-    /// <returns>死亡フラグ</returns>
-    bool IsDead() { return isDead; }
-
-    /// <summary>
-    /// Enemyモデル削除
-    /// </summary>
-    static void UnloadModel();
-
 private:
-    static int emyHandle;       //Enemyモデルハンドル
-    int emyDuplicate;           //複製モデル(読み込み不要)
-    VECTOR emyPos;              //Enemy座標
-    VECTOR emyDir;              //Enemy方向
-    bool isDead;                //死亡フラグ
+
 };
 
