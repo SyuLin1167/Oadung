@@ -1,11 +1,12 @@
 #pragma once
 #include <DxLib.h>
 #include"GameObject.h"
-
+#include"Collision.h"
 
 /*Archerのクラス*/
 class Archer :public GameObject
 {
+	Sphere colSphere;
 public:
 	/// <summary>
 	/// Archerコンストラクタ―
@@ -27,6 +28,7 @@ public:
 	/// </summary>
 	void Draw();
 
+	Sphere GetColSphere();
 private:
 	int MouseX;					//マウス座標X
 	int MouseY;					//マウス座標Y
