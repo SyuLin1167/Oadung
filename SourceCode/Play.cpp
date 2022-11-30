@@ -50,6 +50,7 @@ SceneBase* Play::Update(float deltaTime)
             }
         }
     }
+
     for (int i = 0; i < 5; i++)
     {
         if (arcArray[i] != nullptr)
@@ -63,6 +64,21 @@ SceneBase* Play::Update(float deltaTime)
         }
     }
 
+    for (int ar = 0; ar < 5; ar++)
+    {
+        if (arcArray[ar] != nullptr)
+        {
+            //---“–‚½‚è”»’è‹…Žæ“¾---//
+            Sphere sArc, sPly;
+            sArc = arcArray[ar]->GetColSphere();
+            sPly = player->GetColSphere();
+
+            if (CollisionPair(sArc, sPly))
+            {
+                arcArray[ar]->SetAlive(false);
+            }
+        }
+    }
     if (CheckHitKey(KEY_INPUT_R))
     {
         return new Result();

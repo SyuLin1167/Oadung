@@ -96,6 +96,9 @@
     <ClCompile Include="SourceCode\Time\TimeManager.cpp">
       <Filter>ソース ファイル\Time</Filter>
     </ClCompile>
+    <ClCompile Include="SourceCode\ObjManager.cpp">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SourceCode\Play.h">
@@ -136,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="SourceCode\Time\TimeManager.h">
       <Filter>ソース ファイル\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\ObjManager.h">
+      <Filter>ソース ファイル\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

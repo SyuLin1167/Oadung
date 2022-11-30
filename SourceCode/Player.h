@@ -1,6 +1,7 @@
 #pragma once
 #include<DxLib.h>
 #include"GameObject.h"
+#include"Collision.h"
 
 
 /*Playerのクラス*/
@@ -28,6 +29,12 @@ public:
 	/// </summary>
 	void Draw() override;
 
+	/// <summary>
+	/// 当たり判定球取得
+	/// </summary>
+	/// <returns>当たり判定球</returns>
+	Sphere GetColSphere() { return colSphere; }
+
 private:
 	VECTOR UP = { 0, 0, 0.9f };			//前方向
 	VECTOR DOWN = { 0, 0, -0.9f };		//後方向
@@ -36,5 +43,7 @@ private:
 
 	VECTOR InputVec;	//合成ベクトル
 	bool KeyInput;		//キー入力判定
+
+	Sphere colSphere;			//当たり判定球
 };
 

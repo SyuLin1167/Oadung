@@ -10,6 +10,11 @@ Player::Player()
     objHandle = MV1LoadModel("SourceCode/Assets/Player/hackadoll.pmx");     //モデル読み込み
     objDir = VGet(0.0f, 0.0f, 1.0f);        //初期方向
     objSpeed = 5.0f;                        //初期速度
+
+    //---当たり判定球設定---//
+    colSphere.localCenter = VGet(0, 10, 0);			//ローカル座標
+    colSphere.Radius = 5.0f;						//球半径
+    colSphere.worldCenter = objPos;					//ワールド座標
 }
 
 // @brief Playerデストラクター //
@@ -52,13 +57,15 @@ void Player::Update(float deltaTime)
     {
         InputVec = VNorm(InputVec);                                 //ベクトルの方向成分を取得
         objDir = InputVec;                                          //キャラの向き
-        objPos += InputVec * objSpeed * deltaTime;                //移動
+        objPos += InputVec * objSpeed * deltaTime;                  //移動
     }
     
     MV1SetPosition(objHandle, objPos);                              //ポジション設定
 
     MATRIX RotMatY = MGetRotY(180 * (float)(DX_PI / 180.0f));       //逆向きなので180度回転
     MV1SetRotationZYAxis(objHandle, VTransform(objDir, RotMatY), VGet(0.0f, 1.0f, 0.0f), 0.0f);         //モデル回転
+
+    colSphere.Move(objPos);					//当たり判定の移動
 
 }
 
@@ -67,4 +74,7 @@ void Player::Update(float deltaTime)
 void Player::Draw()
 {
     MV1DrawModel(objHandle);        //モデル描画
+
+        //---当たり判定デバッグ描画(後で消す)---//
+    DrawSphere3D(colSphere.worldCenter, colSphere.Radius, 8, GetColor(0, 255, 255), 0, FALSE);
 }

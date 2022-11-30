@@ -6,7 +6,6 @@
 /*Archerのクラス*/
 class Archer :public GameObject
 {
-	Sphere colSphere;
 public:
 	/// <summary>
 	/// Archerコンストラクタ―
@@ -28,10 +27,17 @@ public:
 	/// </summary>
 	void Draw();
 
-	Sphere GetColSphere();
+	/// <summary>
+	/// 当たり判定球取得
+	/// </summary>
+	/// <returns>当たり判定球</returns>
+	Sphere GetColSphere() { return colSphere; }
+
 private:
 	int MouseX;					//マウス座標X
 	int MouseY;					//マウス座標Y
 	float Time;					//モデルの寿命
+
+	Sphere colSphere;			//当たり判定球
 };
 

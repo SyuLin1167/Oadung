@@ -24,6 +24,7 @@
     <ClCompile Include="SourceCode\GameObject.cpp" />
     <ClCompile Include="SourceCode\Main.cpp" />
     <ClCompile Include="SourceCode\Math\Math.cpp" />
+    <ClCompile Include="SourceCode\ObjManager.cpp" />
     <ClCompile Include="SourceCode\Play.cpp" />
     <ClCompile Include="SourceCode\Player.cpp" />
     <ClCompile Include="SourceCode\Result.cpp" />
@@ -39,6 +40,7 @@
     <ClInclude Include="SourceCode\GameObject.h" />
     <ClInclude Include="SourceCode\Math\Math.h" />
     <ClInclude Include="SourceCode\ObjectTag.h" />
+    <ClInclude Include="SourceCode\ObjManager.h" />
     <ClInclude Include="SourceCode\Play.h" />
     <ClInclude Include="SourceCode\Player.h" />
     <ClInclude Include="SourceCode\Result.h" />
