@@ -7,6 +7,8 @@
 #include"ObjectTag.h"
 #include"Math/Math.h"
 
+using namespace std;
+
 class ObjManager final
 {
 public:
@@ -33,14 +35,34 @@ public:
     static void ReleaceAllObj();
 
     /// <summary>
-    ///全オブジェクトの更新処理
+    /// 全オブジェクトの更新処理
     /// </summary>
     /// <param name="deltaTime">フレームレート</param>
     static void Update(float deltaTime);
 
-
+    /// <summary>
+    /// 全オブジェクトの描画処理
+    /// </summary>
     static void Draw();
 
+    /// <summary>
+    /// ObjManagerの開放
+    /// </summary>
     static void Finalize();
+
+private:
+    /// <summary>
+    /// ObjManagerコンストラクター(シングルトン)
+    /// </summary>
+    ObjManager();
+
+    /// <summary>
+    /// ObjManagerデストラクター
+    /// </summary>
+    ~ObjManager();
+
+    static ObjManager* objInstance;     //ObjManagerの実態
+    vector<GameObject*>holdObj;         //一時待機オブジェクト
+    vector<GameObject*>Object;          //Object[タグ種類][オブジェクト個数]
 };
 
