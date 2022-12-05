@@ -41,6 +41,11 @@ public:
     static void Update(float deltaTime);
 
     /// <summary>
+    /// オブジェクトの生死状況
+    /// </summary>
+    static void Dead();
+
+    /// <summary>
     /// 全オブジェクトの描画処理
     /// </summary>
     static void Draw();
@@ -64,5 +69,6 @@ private:
     static ObjManager* objInstance;     //ObjManagerの実態
     vector<GameObject*>holdObj;         //一時待機オブジェクト
     vector<GameObject*>Object;          //Object[タグ種類][オブジェクト個数]
+    vector<GameObject*>deadObj;         //死亡オブジェクト
 };
 

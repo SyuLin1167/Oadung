@@ -51,7 +51,7 @@ void ObjManager::Release(GameObject* releaseObj)
 		return;
 	}
 
-	auto iter = find(objInstance->Object.begin(),
+	iter = find(objInstance->Object.begin(),
 		objInstance->Object.end(), releaseObj);				//アクティブオブジェクト内を検索
 
 	if (iter != objInstance->Object.end())					//オブジェクトが見つかったら
@@ -75,4 +75,28 @@ void ObjManager::ReleaceAllObj()
 		delete objInstance->Object.back();					//末尾から削除
 		objInstance->Object.pop_back();						//-----------------------なぜこの文が必要なのか
 	}
+}
+
+// @brief 全オブジェクトの更新処理 //
+
+void ObjManager::Update(float deltaTime)
+{
+	for (auto obj : objInstance->Object)			//すべてのアクターの更新
+	{
+		obj->Update(deltaTime);						//該当タグにあるすべてのオブジェクトを更新
+	}
+
+	for (auto holding : objInstance->holdObj)
+	{
+		objInstance->Object.emplace_back(holding);	//一時保存中のオブジェクトをアクティブリストに追加
+	}
+	objInstance->holdObj.clear();
+
+}
+
+// @brief オブジェクトの生死状況 //
+
+void ObjManager::Dead()
+{
+	
 }

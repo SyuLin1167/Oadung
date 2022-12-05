@@ -62,8 +62,10 @@ void Player::Update(float deltaTime)
     
     MV1SetPosition(objHandle, objPos);                              //ポジション設定
 
-    MATRIX RotMatY = MGetRotY(180 * (float)(DX_PI / 180.0f));       //逆向きなので180度回転
-    MV1SetRotationZYAxis(objHandle, VTransform(objDir, RotMatY), VGet(0.0f, 1.0f, 0.0f), 0.0f);         //モデル回転
+    MATRIX RotMatY = MGetRotY(180.0f * (float)(DX_PI / 180.0f));       //逆向きなので180度回転
+    VECTOR negativeVec = VTransform(objDir, RotMatY);
+    MV1SetRotationZYAxis(objHandle, negativeVec,
+        VGet(0.0f, 1.0f, 0.0f), 0.0f);         //モデル回転
 
     colSphere.Move(objPos);					//当たり判定の移動
 
