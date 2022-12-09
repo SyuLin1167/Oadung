@@ -83,20 +83,56 @@ void ObjManager::Update(float deltaTime)
 {
 	for (auto obj : objInstance->Object)			//すべてのアクターの更新
 	{
-		obj->Update(deltaTime);						//該当タグにあるすべてのオブジェクトを更新
+		obj->Update(deltaTime);						//該当タグにある全てのオブジェクトを更新
 	}
 
 	for (auto holding : objInstance->holdObj)
 	{
 		objInstance->Object.emplace_back(holding);	//一時保存中のオブジェクトをアクティブリストに追加
 	}
-	objInstance->holdObj.clear();
+	objInstance->holdObj.clear();					//追加し終えたので一時保存オブジェクト内をすべて空にする
 
+	Dead();
 }
 
 // @brief オブジェクトの生死状況 //
 
 void ObjManager::Dead()
 {
-	
+	vector<GameObject*>deadObj;									//死亡オブジェクト
+	for (int i = 0; i < objInstance->Object.size(); ++i)		//死亡オブジェクト検索
+	{
+		if (!objInstance->Object[i]->IsAlive())					//オブジェクトが生きていなかったら
+		{
+			deadObj.emplace_back(objInstance->Object[i]);		//死亡オブジェクトへ追加
+		}
+	}
+
+	for (auto dead : deadObj)
+	{
+		delete dead;											//死んでいるオブジェクトを全て削除
+	}
+	deadObj.clear();											//削除し終えたので死亡オブジェクト内を全て空にする
+}
+
+// @brief 全オブジェクトの描画処理 //
+
+void ObjManager::Draw()
+{
+	for (int i = 0; i < objInstance->Object.size(); ++i)		//全てのアクターの描画
+	{
+		objInstance->Object[i]->Draw();							//該当タグにある全てのオブジェクトを描画
+	}
+}
+
+// @brief ObjManagerの開放 //
+
+void ObjManager::Finalize()
+{
+	ReleaceAllObj();					//全てのオブジェクトを削除
+	if (objInstance)					//インスタンスの中身があったら
+	{
+		delete objInstance;				//削除
+		objInstance = nullptr;			//中身を空にする
+	}
 }

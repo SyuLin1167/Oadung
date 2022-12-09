@@ -20,7 +20,7 @@ public:
     /// <summary>
     /// オブジェクト登録
     /// </summary>
-    /// <param name="newObj">オブジェクト</param>
+    /// <param name="newObj">追加するオブジェクト</param>
     static void Entry(GameObject* newObj);
 
     /// <summary>

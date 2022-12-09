@@ -1,4 +1,5 @@
 #include "Play.h"
+#include"ObjManager.h"
 #include "Player.h"
 #include "Archer.h"
 #include "Enemy.h"
@@ -16,8 +17,13 @@ Play::Play()
     SetCameraNearFar(cNear, cFar);                      //カメラの描画範囲設定
     SetCameraPositionAndTarget_UpVecY(cPos, cTarget);   //視点からターゲットを見る角度にカメラ設置
 
+    ObjManager::Init();
+
     player = new Player();
+    ObjManager::Entry(player);
+
     enemy = new Enemy();
+    ObjManager::Entry(enemy);
 }
 
 // @brief PlaySceneデストラクター //
@@ -38,13 +44,14 @@ SceneBase* Play::Update(float deltaTime)
     enemy->Update(deltaTime);
 
     putTime -= deltaTime;
-    if (putTime < 0.0f&&GetMouseInput()&MOUSE_INPUT_LEFT)          //エンターキーが押されたら
+    if (putTime < 0.0f&&GetMouseInput()&MOUSE_INPUT_LEFT)          //左クリックしたら
     {
         for (int i = 0; i < 5; i++)             //ポインタの空きを検索
         {
-            if (arcArray[i] == nullptr)         //空きを見つけたら
+            if (archer == nullptr)         //空きを見つけたら
             {
-                arcArray[i] = new Archer();     //新規作成
+                archer = new Archer;     //新規作成
+                ObjManager::Entry(archer);
                 putTime = putInterval;
                 break;                          //for文を抜ける
             }
