@@ -83,20 +83,57 @@ void ObjManager::Update(float deltaTime)
 {
 	for (auto obj : objInstance->Object)			//すべてのアクターの更新
 	{
-		obj->Update(deltaTime);						//該当タグにあるすべてのオブジェクトを更新
+		obj->Update(deltaTime);								//該当タグにあるすべてのオブジェクトを更新
 	}
 
-	for (auto holding : objInstance->holdObj)
+	for (auto holding : objInstance->holdObj)		//一時保存中のオブジェクトをアクティブリストに追加
 	{
-		objInstance->Object.emplace_back(holding);	//一時保存中のオブジェクトをアクティブリストに追加
+		objInstance->Object.emplace_back(holding);		//保存中のオブジェクトデータをオブジェクトへ移動
 	}
-	objInstance->holdObj.clear();
+	objInstance->holdObj.clear();							//全て移し終わったら一時保存オブジェクト内を空にする
 
+	Dead();
 }
 
 // @brief オブジェクトの生死状況 //
 
 void ObjManager::Dead()
 {
-	
+	vector<GameObject*>deadObj;										//死亡オブジェクト
+	for (int i = 0; i < objInstance->Object.size(); i++)			//死亡しているオブジェクトを検索
+	{
+		if (!objInstance->Object[i]->IsAlive())						//オブジェクトが生きていなかったら
+		{
+			deadObj.emplace_back(objInstance->Object[i]);		//死亡オブジェクトへ移動
+		}
+	}
+
+	for (auto dead : deadObj)								//全ての死亡オブジェクトの削除
+	{
+		delete dead;												//死んでいるオブジェクトをdelete
+	}
+	deadObj.clear();												//死亡オブジェクト内を空にする
+}
+
+// @brief オブジェクトの描画処理 //
+
+void ObjManager::Draw()
+{
+	for (auto obj : objInstance->Object)			//全てのアクターの描画
+	{
+		obj->Draw();										//該当タグにある全てのオブジェクトを描画
+	}
+}
+
+// @birief ObjManagerの開放 //
+
+void ObjManager::Finalize()
+{
+	ReleaceAllObj();										//全てのオブジェクト開放
+	if (objInstance)										//objManagerに実態があったら
+	{
+		delete objInstance;									//削除
+		objInstance = nullptr;								//インスタンスは空
+	}
+
 }

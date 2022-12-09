@@ -69,6 +69,5 @@ private:
     static ObjManager* objInstance;     //ObjManagerの実態
     vector<GameObject*>holdObj;         //一時待機オブジェクト
     vector<GameObject*>Object;          //Object[タグ種類][オブジェクト個数]
-    vector<GameObject*>deadObj;         //死亡オブジェクト
 };
 
