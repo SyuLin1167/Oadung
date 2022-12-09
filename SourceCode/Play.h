@@ -10,6 +10,7 @@ const float gridAllSize = 100.0f;
 const int divideNum = 10;
 const float gridSpace = gridAllSize / divideNum;
 
+class GameObject;
 class Player;
 class Archer;
 class Enemy;
@@ -17,8 +18,8 @@ class Enemy;
 /*プレイシーンのクラス*/
 class Play :public SceneBase
 {
-    Player* player;
-    Archer* arcArray[5] = { nullptr };
+    Player* player;                     //プレイヤー
+    Archer* archer;                     //アーチャー
     Enemy* enemy;
 public:
     /// <summary>
