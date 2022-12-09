@@ -44,48 +44,29 @@ SceneBase* Play::Update(float deltaTime)
     enemy->Update(deltaTime);
 
     putTime -= deltaTime;
-    if (putTime < 0.0f&&GetMouseInput()&MOUSE_INPUT_LEFT)          //左クリックしたら
+    if (putTime < 0.0f && GetMouseInput() & MOUSE_INPUT_LEFT)          //左クリックしたら
     {
-        for (int i = 0; i < 5; i++)             //ポインタの空きを検索
+
+        archer = new Archer;     //新規作成
+        ObjManager::Entry(archer);
+        putTime = putInterval;
+    }
+
+    ObjManager::Update(deltaTime);
+
+    if (archer != nullptr)
+    {
+        //---当たり判定球取得---//
+        Sphere sArc, sPly;
+        sArc = archer->GetColSphere();
+        sPly = player->GetColSphere();
+
+        if (CollisionPair(sArc, sPly))
         {
-            if (archer == nullptr)         //空きを見つけたら
-            {
-                archer = new Archer;     //新規作成
-                ObjManager::Entry(archer);
-                putTime = putInterval;
-                break;                          //for文を抜ける
-            }
+            archer->SetAlive(false);
         }
     }
 
-    for (int i = 0; i < 5; i++)
-    {
-        if (arcArray[i] != nullptr)
-        {
-            arcArray[i]->Update(deltaTime);
-            if (!arcArray[i]->IsAlive())
-            {
-                delete arcArray[i];
-                arcArray[i] = nullptr;
-            }
-        }
-    }
-
-    for (int ar = 0; ar < 5; ar++)
-    {
-        if (arcArray[ar] != nullptr)
-        {
-            //---当たり判定球取得---//
-            Sphere sArc, sPly;
-            sArc = arcArray[ar]->GetColSphere();
-            sPly = player->GetColSphere();
-
-            if (CollisionPair(sArc, sPly))
-            {
-                arcArray[ar]->SetAlive(false);
-            }
-        }
-    }
     if (CheckHitKey(KEY_INPUT_R))
     {
         return new Result();
@@ -117,12 +98,7 @@ void Play::Draw()
     player->Draw();
     enemy->Draw();
 
-    for (int i = 0; i < 5; i++)
-    {
-        if (arcArray[i] != nullptr)
-        {
-            arcArray[i]->Draw();
-        }
-    }
+    ObjManager::Draw();
+
     DrawFormatString(0, 0, GetColor(255, 255, 255), "Play画面:RでResultシーンへ移行");
 }
