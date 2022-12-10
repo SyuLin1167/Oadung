@@ -1,8 +1,10 @@
 #include "Archer.h"
+#include "ObjManager.h"
+#include"Player.h"
 
 // @brief Archerコンストラクタ― //
 
-Archer::Archer()
+Archer::Archer(Player* player)
 	:GameObject(ObjectTag::Archer)
 	,MouseX(0)
 	,MouseY(0)
@@ -38,22 +40,17 @@ Archer::~Archer()
 void Archer::Update(float deltaTime)
 {
 	colSphere.Move(objPos);					//当たり判定の移動
-
-	Time += deltaTime;
-	if (Time >= 3.0f)
-	{
-		SetAlive(false);
-		Time = 0;
-	}
 }
 
 // @brief Archer描画処理 //
 
 void Archer::Draw()
 {
-	DrawFormatString(0, 100, GetColor(255, 255, 0), "mousepos:%d,%d",MouseX,MouseY);
-	MV1DrawModel(objHandle);
+	if (isAlive)
+	{
+		MV1DrawModel(objHandle);
 
-	//---当たり判定デバッグ描画(後で消す)---//
-	DrawSphere3D(colSphere.worldCenter, colSphere.Radius, 8, GetColor(0, 255, 255), 0, FALSE);
+		//---当たり判定デバッグ描画(後で消す)---//
+		DrawSphere3D(colSphere.worldCenter, colSphere.Radius, 8, GetColor(0, 255, 255), 0, FALSE);
+	}
 }

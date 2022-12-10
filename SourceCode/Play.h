@@ -12,14 +12,12 @@ const float gridSpace = gridAllSize / divideNum;
 
 class GameObject;
 class Player;
-class Archer;
 class Enemy;
 
 /*プレイシーンのクラス*/
 class Play :public SceneBase
 {
     Player* player;                     //プレイヤー
-    Archer* archer;                     //アーチャー
     Enemy* enemy;
 public:
     /// <summary>
@@ -52,7 +50,5 @@ private:
     VECTOR p1;
     VECTOR p2;
 
-    const float putInterval = 1.0f;
-    float putTime = 0.0f;
 };
 

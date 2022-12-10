@@ -105,14 +105,24 @@ void ObjManager::Dead()
 		if (!objInstance->Object[i]->IsAlive())						//オブジェクトが生きていなかったら
 		{
 			deadObj.emplace_back(objInstance->Object[i]);		//死亡オブジェクトへ移動
+
+			objInstance->Object.erase(
+				remove_if(begin(objInstance->Object), end(objInstance->Object), [](GameObject* gObj) {return !gObj->IsAlive(); }),
+				cend(objInstance->Object));
 		}
 	}
 
-	for (auto dead : deadObj)								//全ての死亡オブジェクトの削除
+	while (!deadObj.empty())
+	{
+		delete deadObj.back();
+		deadObj.pop_back();
+	}
+
+	/*for (auto dead : deadObj)								//全ての死亡オブジェクトの削除
 	{
 		delete dead;												//死んでいるオブジェクトをdelete
 	}
-	deadObj.clear();												//死亡オブジェクト内を空にする
+	deadObj.clear();*/												//死亡オブジェクト内を空にする
 }
 
 // @brief オブジェクトの描画処理 //

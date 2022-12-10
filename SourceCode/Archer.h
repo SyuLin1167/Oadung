@@ -10,7 +10,7 @@ public:
 	/// <summary>
 	/// Archerコンストラクタ―
 	/// </summary>
-	Archer();
+	Archer(class Player* player);
 
 	/// <summary>
 	/// Archerデストラクタ―

@@ -1,4 +1,6 @@
 #include "Player.h"
+#include"ObjManager.h"
+#include "Archer.h"
 
 // @brief Playerコンストラクター //
 
@@ -69,6 +71,26 @@ void Player::Update(float deltaTime)
 
     colSphere.Move(objPos);					//当たり判定の移動
 
+    putTime -= deltaTime;
+    if (putTime < 0.0f && GetMouseInput() & MOUSE_INPUT_LEFT)          //左クリックしたら
+    {
+
+        archer = new Archer(this);     //新規作成
+        ObjManager::Entry(archer);
+        putTime = putInterval;
+    }
+    if (archer != nullptr)
+    {
+        //---当たり判定球取得---//
+        Sphere sArc, sPly;
+        sArc = archer->GetColSphere();
+        sPly = this->GetColSphere();
+
+        if (CollisionPair(sArc, sPly))
+        {
+            archer->SetAlive(false);
+        }
+    }
 }
 
 // @brief Player描画処理 //

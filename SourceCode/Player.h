@@ -3,10 +3,12 @@
 #include"GameObject.h"
 #include"Collision.h"
 
+class Archer;
 
 /*Playerのクラス*/
 class Player :public GameObject
 {
+	Archer* archer;                     //アーチャー
 public:
 	/// <summary>
 	/// Playerコンストラクター
@@ -45,5 +47,8 @@ private:
 	bool KeyInput;		//キー入力判定
 
 	Sphere colSphere;			//当たり判定球
+
+	const float putInterval = 1.0f;
+	float putTime = 0.0f;
 };
 

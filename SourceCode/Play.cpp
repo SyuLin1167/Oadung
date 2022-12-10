@@ -1,7 +1,6 @@
 #include "Play.h"
 #include"ObjManager.h"
 #include "Player.h"
-#include "Archer.h"
 #include "Enemy.h"
 #include "Result.h"
 
@@ -40,35 +39,12 @@ Play::~Play()
 
 SceneBase* Play::Update(float deltaTime)
 {
-    player->Update(deltaTime);
-    enemy->Update(deltaTime);
-
-    putTime -= deltaTime;
-    if (putTime < 0.0f && GetMouseInput() & MOUSE_INPUT_LEFT)          //左クリックしたら
-    {
-
-        archer = new Archer;     //新規作成
-        ObjManager::Entry(archer);
-        putTime = putInterval;
-    }
 
     ObjManager::Update(deltaTime);
 
-    if (archer != nullptr)
-    {
-        //---当たり判定球取得---//
-        Sphere sArc, sPly;
-        sArc = archer->GetColSphere();
-        sPly = player->GetColSphere();
-
-        if (CollisionPair(sArc, sPly))
-        {
-            archer->SetAlive(false);
-        }
-    }
-
     if (CheckHitKey(KEY_INPUT_R))
     {
+        ObjManager::Finalize();
         return new Result();
     }
     return this;
@@ -94,9 +70,6 @@ void Play::Draw()
         DrawLine3D(p1, p2, GetColor(0, 255, 0));
     }//描画終わり
 
-    //DrawGraph(BgX, BgY, BgHandle, TRUE);
-    player->Draw();
-    enemy->Draw();
 
     ObjManager::Draw();
 
