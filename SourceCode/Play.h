@@ -18,7 +18,7 @@ class Enemy;
 class Play :public SceneBase
 {
     Player* player;                     //プレイヤー
-    Enemy* enemy;
+    Enemy* enemy;                       //エネミー
 public:
     /// <summary>
     /// コンストラクター
@@ -33,7 +33,7 @@ public:
     /// <summary>
     /// PlayScene更新処理
     /// </summary>
-    /// <param name="deltaTime"></param>
+    /// <param name="deltaTime">:フレームレート</param>
     /// <returns>現在のシーンのポインタ</returns>
     SceneBase* Update(float deltaTime)override;
 

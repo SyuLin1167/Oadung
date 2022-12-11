@@ -44,10 +44,10 @@ void ObjManager::Release(GameObject* releaseObj)
 
 	if (iter != objInstance->holdObj.end())					//オブジェクトが見つかったら
 	{
-		iter_swap(iter, objInstance->holdObj.end() - 1);	//見つけたオブジェクトを最後尾に移動
-		objInstance->holdObj.pop_back();					//データを削除
+		//iter_swap(iter, objInstance->holdObj.end() - 1);	//見つけたオブジェクトを最後尾に移動
+		//objInstance->holdObj.pop_back();					//データを削除
 
-		//objInstance->holdObj.erase(iter);					//-----------------------この書き方じゃダメなのか
+		objInstance->holdObj.erase(iter);					//-----------------------この書き方じゃダメなのか
 		return;
 	}
 
@@ -107,15 +107,15 @@ void ObjManager::Dead()
 			deadObj.emplace_back(objInstance->Object[i]);		//死亡オブジェクトへ移動
 
 			objInstance->Object.erase(
-				remove_if(begin(objInstance->Object), end(objInstance->Object), [](GameObject* gObj) {return !gObj->IsAlive(); }),
-				cend(objInstance->Object));
+				remove_if(begin(objInstance->Object), end(objInstance->Object),
+					[](GameObject* gObj) {return !gObj->IsAlive(); }),cend(objInstance->Object));
 		}
 	}
 
-	while (!deadObj.empty())
+	while (!deadObj.empty())										//死亡オブジェクトが空になるまで
 	{
-		delete deadObj.back();
-		deadObj.pop_back();
+		delete deadObj.back();										//末尾から削除
+		deadObj.pop_back();											//末尾のデータを削除
 	}
 
 	/*for (auto dead : deadObj)								//全ての死亡オブジェクトの削除

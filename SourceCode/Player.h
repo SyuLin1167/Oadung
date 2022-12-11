@@ -8,7 +8,7 @@ class Archer;
 /*Playerのクラス*/
 class Player :public GameObject
 {
-	Archer* archer;                     //アーチャー
+	Archer* archer;                    //アーチャー
 public:
 	/// <summary>
 	/// Playerコンストラクター

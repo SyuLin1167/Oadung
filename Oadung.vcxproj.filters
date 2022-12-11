@@ -55,6 +55,9 @@
     <Filter Include="ソース ファイル\Collision">
       <UniqueIdentifier>{e68d7863-63fd-42fc-bfed-721c5e20051f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Animation">
+      <UniqueIdentifier>{579528d5-d273-4a08-9c70-1977b6079994}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SourceCode\Main.cpp">
@@ -99,6 +102,9 @@
     <ClCompile Include="SourceCode\ObjManager.cpp">
       <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
+    <ClCompile Include="SourceCode\AnimManager.cpp">
+      <Filter>ソース ファイル\Animation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SourceCode\Play.h">
@@ -142,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="SourceCode\ObjManager.h">
       <Filter>ソース ファイル\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\AnimManager.h">
+      <Filter>ソース ファイル\Animation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

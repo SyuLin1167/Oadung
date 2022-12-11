@@ -9,6 +9,7 @@
 
 using namespace std;
 
+/*オブジェクト管理クラス*/
 class ObjManager final
 {
 public:
@@ -20,13 +21,13 @@ public:
     /// <summary>
     /// オブジェクト登録
     /// </summary>
-    /// <param name="newObj">追加するオブジェクト</param>
+    /// <param name="newObj">:追加するオブジェクト</param>
     static void Entry(GameObject* newObj);
 
     /// <summary>
     /// オブジェクト削除
     /// </summary>
-    /// <param name="releaseObj">削除するオブジェクト</param>
+    /// <param name="releaseObj">:削除するオブジェクト</param>
     static void Release(GameObject* releaseObj); 
 
     /// <summary>
@@ -37,7 +38,7 @@ public:
     /// <summary>
     /// 全オブジェクトの更新処理
     /// </summary>
-    /// <param name="deltaTime">フレームレート</param>
+    /// <param name="deltaTime">:フレームレート</param>
     static void Update(float deltaTime);
 
     /// <summary>
