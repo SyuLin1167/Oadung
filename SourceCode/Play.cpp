@@ -13,7 +13,7 @@ Play::Play()
 {
     BgHandle = LoadGraph("SourceCode/Assets/BackGround/Play.png");
 
-    SetCameraNearFar(cNear, cFar);                      //カメラの描画範囲設定
+    SetCameraNearFar(CameraNear, CameraFar);                      //カメラの描画範囲設定
     SetCameraPositionAndTarget_UpVecY(cPos, cTarget);   //視点からターゲットを見る角度にカメラ設置
 
     ObjManager::Init();
@@ -55,17 +55,17 @@ SceneBase* Play::Update(float deltaTime)
 void Play::Draw()
 {
     //---地面グリッドを描画---//(のちにゲームオブジェクトに移行)
-    for (int ix = 0; ix < divideNum+1; ix++)
+    for (int ix = 0; ix < DivideNum+1; ix++)
     {
-        p1 = VGet(ix * gridSpace - gridAllSize * 0.5f, 0.0f, -gridAllSize * 0.5f);
-        p2 = VGet(ix * gridSpace - gridAllSize * 0.5f, 0.0f, gridAllSize * 0.5f);
+        p1 = VGet(ix * GridSpace - GridAllSize * 0.5f, 0.0f, -GridAllSize * 0.5f);
+        p2 = VGet(ix * GridSpace - GridAllSize * 0.5f, 0.0f, GridAllSize * 0.5f);
 
         DrawLine3D(p1, p2, GetColor(0, 255, 0));
     }
-    for (int iy = 0; iy < divideNum + 1; iy++)
+    for (int iy = 0; iy < DivideNum + 1; iy++)
     {
-        p1 = VGet(-gridAllSize * 0.5f, 0.0f, iy * gridSpace - gridAllSize * 0.5f);
-        p2 = VGet(gridAllSize * 0.5f, 0.0f, iy * gridSpace - gridAllSize * 0.5f);
+        p1 = VGet(-GridAllSize * 0.5f, 0.0f, iy * GridSpace - GridAllSize * 0.5f);
+        p2 = VGet(GridAllSize * 0.5f, 0.0f, iy * GridSpace - GridAllSize * 0.5f);
 
         DrawLine3D(p1, p2, GetColor(0, 255, 0));
     }//描画終わり

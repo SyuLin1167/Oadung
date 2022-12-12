@@ -15,7 +15,7 @@ ObjManager::ObjManager()
 
 ObjManager::~ObjManager()
 {
-	ReleaceAllObj();
+	ReleaceAllObj();										//すべてのオブジェクトを削除
 }
 
 // @brief ObjManager初期化処理 //

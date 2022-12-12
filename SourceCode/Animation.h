@@ -6,26 +6,26 @@
 
 using namespace std;
 
-/*AnimManagerのクラス*/
-class AnimManager
+/* Animationのクラス */
+class Animation
 {
 public:
 	/// <summary>
-	/// AnimManagerのコンストラクタ―
+	/// Animationコンストラクタ―
 	/// </summary>
-	AnimManager();
+	Animation(int modelHandle);
 
 	/// <summary>
-	/// AnimManagerのデストラクタ―
+	/// Animationデストラクタ―
 	/// </summary>
-	~AnimManager();
+	~Animation();
 
 	/// <summary>
-	/// アニメーションセット処理
+	/// アニメーション追加処理
 	/// </summary>
 	/// <param name="fileName">:ファイル名</param>
-	/// <param name="animFps">:再生フレームレート</param>
-	/// <param name="animLoop">:ループ再生</param>
+	/// <param name="animFps">:再生フレームレート(デフォルト・30fps)</param>
+	/// <param name="animLoop">:ループ再生(デフォルト・ループさせる)</param>
 	/// <returns></returns>
 	int AddAnimation(string fileName, float animFps = 30.0f, bool animLoop = true);
 
@@ -39,7 +39,7 @@ public:
 	/// アニメーション再生
 	/// </summary>
 	/// <param name="animId">:アニメーションID</param>
-	void StartAnim(int animId);
+	void StartAnim(int animID);
 
 	/// <summary>
 	/// アニメーション停止

@@ -9,7 +9,7 @@
 
 using namespace std;
 
-/*オブジェクト管理クラス*/
+/* オブジェクト管理クラス */
 class ObjManager final
 {
 public:
@@ -52,7 +52,7 @@ public:
     static void Draw();
 
     /// <summary>
-    /// ObjManagerの開放
+    /// ObjManagerの解放
     /// </summary>
     static void Finalize();
 

@@ -2,7 +2,7 @@
 #include<DxLib.h>
 #include"GameObject.h"
 
-/*Enemyのクラス*/
+/* Enemyのクラス */
 class Enemy :public GameObject
 {
 public:

@@ -3,7 +3,7 @@
 #include"GameObject.h"
 #include"Collision.h"
 
-/*Archerのクラス*/
+/* Archerのクラス */
 class Archer :public GameObject
 {
 public:

@@ -2,19 +2,19 @@
 #include <DxLib.h>
 #include"SceneBase.h"
 
-const float cNear = 1.0f;       //カメラの描画範囲(近)
-const float cFar = 2000.0f;     //カメラの描画範囲(遠)
+const float CameraNear = 1.0f;       //カメラの描画範囲(近)
+const float CameraFar = 2000.0f;     //カメラの描画範囲(遠)
 
 //---地面グリッド描画定数---//(のちにゲームオブジェクトに移行)
-const float gridAllSize = 100.0f;
-const int divideNum = 10;
-const float gridSpace = gridAllSize / divideNum;
+const float GridAllSize = 100.0f;
+const int DivideNum = 10;
+const float GridSpace = GridAllSize / DivideNum;
 
 class GameObject;
 class Player;
 class Enemy;
 
-/*プレイシーンのクラス*/
+/* プレイシーンのクラス */
 class Play :public SceneBase
 {
     Player* player;                     //プレイヤー

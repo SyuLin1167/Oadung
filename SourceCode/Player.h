@@ -5,7 +5,7 @@
 
 class Archer;
 
-/*Playerのクラス*/
+/* Playerのクラス */
 class Player :public GameObject
 {
 	Archer* archer;                    //アーチャー
