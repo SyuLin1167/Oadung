@@ -27,7 +27,7 @@ public:
 	/// <param name="animFps">:再生フレームレート(デフォルト・30fps)</param>
 	/// <param name="animLoop">:ループ再生(デフォルト・ループさせる)</param>
 	/// <returns></returns>
-	int AddAnimation(string fileName, float animFps = 30.0f, bool animLoop = true);
+	int AddAnimation(string animFileName, float animFps = 30.0f, bool animLoop = true);
 
 	/// <summary>
 	/// アニメーション時間セット

@@ -55,8 +55,6 @@ private:
     /// </summary>
     ~AssetManager();
 
-    static int meshID;                      //メッシュID
-
     static AssetManager* assetInstance;     //AssetManagerの実態
     unordered_map<string, int>meshMap;      //メッシュ(オリジナル)
     unordered_map<string, int>animMap;      //アニメーション(オリジナル)

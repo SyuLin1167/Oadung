@@ -105,7 +105,7 @@
     <ClCompile Include="SourceCode\Animation.cpp">
       <Filter>ソース ファイル\Animation</Filter>
     </ClCompile>
-    <ClCompile Include="AssetManager.cpp">
+    <ClCompile Include="SourceCode\AssetManager.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -155,8 +155,8 @@
     <ClInclude Include="SourceCode\Animation.h">
       <Filter>ソース ファイル\Animation</Filter>
     </ClInclude>
-    <ClInclude Include="AssetManager.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="SourceCode\AssetManager.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -9,7 +9,8 @@ Player::Player()
     ,InputVec(VGet(0.0f,0.0f,0.0f))
     ,KeyInput(false)
 {
-    objHandle = MV1LoadModel("SourceCode/Assets/Player/hackadoll.pmx");     //モデル読み込み
+    objHandle = MV1LoadModel("SourceCode/Assets/Player/PlayerModel.mv1");     //モデル読み込み
+    MV1SetScale(objHandle, VGet(0.1f, 0.1f, 0.1f));							//モデルのサイズ設定
     objDir = VGet(0.0f, 0.0f, 1.0f);        //初期方向
     objSpeed = 5.0f;                        //初期速度
 

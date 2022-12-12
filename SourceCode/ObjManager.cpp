@@ -44,10 +44,8 @@ void ObjManager::Release(GameObject* releaseObj)
 
 	if (iter != objInstance->holdObj.end())					//オブジェクトが見つかったら
 	{
-		//iter_swap(iter, objInstance->holdObj.end() - 1);	//見つけたオブジェクトを最後尾に移動
-		//objInstance->holdObj.pop_back();					//データを削除
-
-		objInstance->holdObj.erase(iter);					//-----------------------この書き方じゃダメなのか
+		iter_swap(iter, objInstance->holdObj.end() - 1);	//見つけたオブジェクトを最後尾に移動
+		objInstance->holdObj.pop_back();					//データを削除
 		return;
 	}
 
@@ -67,13 +65,14 @@ void ObjManager::ReleaceAllObj()
 {
 	while (!objInstance->holdObj.empty())					//一時保存オブジェクト内が空になるまで
 	{
-		delete objInstance->holdObj.back();					//末尾から削除	---------ここはpop_backじゃないのか
+		delete objInstance->holdObj.back();					//末尾から削除
+		objInstance->holdObj.pop_back();
 	}
 
 	while (!objInstance->Object.empty())					//アクティブオブジェクト内が空になるまで
 	{
 		delete objInstance->Object.back();					//末尾から削除
-		objInstance->Object.pop_back();						//-----------------------なぜこの文が必要なのか
+		objInstance->Object.pop_back();
 	}
 }
 
@@ -118,11 +117,6 @@ void ObjManager::Dead()
 		deadObj.pop_back();											//末尾のデータを削除
 	}
 
-	/*for (auto dead : deadObj)								//全ての死亡オブジェクトの削除
-	{
-		delete dead;												//死んでいるオブジェクトをdelete
-	}
-	deadObj.clear();*/												//死亡オブジェクト内を空にする
 }
 
 // @brief オブジェクトの描画処理 //
@@ -143,7 +137,5 @@ void ObjManager::Finalize()
 	if (objInstance)										//objManagerに実態があったら
 	{
 		delete objInstance;									//削除
-		objInstance = nullptr;								//インスタンスは空
 	}
-
 }
