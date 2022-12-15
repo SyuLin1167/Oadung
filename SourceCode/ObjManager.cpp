@@ -65,14 +65,14 @@ void ObjManager::ReleaceAllObj()
 {
 	while (!objInstance->holdObj.empty())					//一時保存オブジェクト内が空になるまで
 	{
-		delete objInstance->holdObj.back();					//末尾から削除
-		objInstance->holdObj.pop_back();
+		delete objInstance->holdObj.back();					//末尾からデータ削除
+		objInstance->holdObj.pop_back();					//末尾から要素削除
 	}
 
 	while (!objInstance->Object.empty())					//アクティブオブジェクト内が空になるまで
 	{
-		delete objInstance->Object.back();					//末尾から削除
-		objInstance->Object.pop_back();
+		delete objInstance->Object.back();					//末尾からデータ削除
+		objInstance->Object.pop_back();						//末尾から要素削除
 	}
 }
 
@@ -106,8 +106,8 @@ void ObjManager::Dead()
 			deadObj.emplace_back(objInstance->Object[i]);		//死亡オブジェクトへ移動
 
 			objInstance->Object.erase(
-				remove_if(begin(objInstance->Object), end(objInstance->Object),
-					[](GameObject* gObj) {return !gObj->IsAlive(); }),cend(objInstance->Object));
+				remove_if(objInstance->Object.begin(),objInstance->Object.end(),
+			 [](GameObject* gObj) {return !gObj->IsAlive(); }),objInstance->Object.cend());
 		}
 	}
 

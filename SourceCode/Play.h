@@ -1,5 +1,6 @@
 #pragma once
 #include <DxLib.h>
+
 #include"SceneBase.h"
 
 const float CameraNear = 1.0f;       //カメラの描画範囲(近)
@@ -17,8 +18,8 @@ class Enemy;
 /* プレイシーンのクラス */
 class Play :public SceneBase
 {
-    Player* player;                     //プレイヤー
-    Enemy* enemy;                       //エネミー
+    Player* player=nullptr;                     //プレイヤー
+    Enemy* enemy=nullptr;                       //エネミー
 public:
     /// <summary>
     /// コンストラクター

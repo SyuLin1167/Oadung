@@ -6,7 +6,7 @@
 Enemy::Enemy()
     :GameObject(ObjectTag::Enemy)
 {
-    objHandle = MV1LoadModel("SourceCode/Assets/Enemy/SampleEnemy.MV1");        //モデル読み込み
+    objHandle = AssetManager::GetMesh("SourceCode/Assets/Enemy/SampleEnemy.MV1");        //モデル読み込み
     MV1SetScale(objHandle, VGet(0.1f, 0.1f, 0.1f));                             //モデルのサイズ設定
     objDir = VGet(-1.0f, 0.0f, 0.0f);                                           //初期方向
     objPos = VGet(10.0f, 0.0f, 0.0f);                                           //初期位置

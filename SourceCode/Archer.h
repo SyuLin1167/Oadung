@@ -1,6 +1,9 @@
 #pragma once
 #include <DxLib.h>
+
+#include "ObjManager.h"
 #include"GameObject.h"
+#include"AssetManager.h"
 #include"Collision.h"
 
 /* Archer‚ÌƒNƒ‰ƒX */

@@ -93,21 +93,21 @@ void AssetManager::ReleaseMesh(int meshID)
 void AssetManager::ReleaseAllAsset()
 {
     //---アニメーション解放---//
-    for (auto iter : assetInstance->animMap)
+    for (auto anim : assetInstance->animMap)
     {
-        MV1DeleteModel(iter.second);
+        MV1DeleteModel(anim.second);
     }
 
     //---メッシュ解放---//
-    for (auto iter : assetInstance->meshMap)
+    for (auto mesh : assetInstance->meshMap)
     {
-        MV1DeleteModel(iter.second);
+        MV1DeleteModel(mesh.second);
     }
 
     //---複製解放---//
-    for (auto iter : assetInstance->duplicateMesh)
+    for (auto dup : assetInstance->duplicateMesh)
     {
-        MV1DeleteModel(iter);
+        MV1DeleteModel(dup);
     }
 
     assetInstance->animMap.clear();             //アニメーションのすべての要素を削除
@@ -120,8 +120,8 @@ void AssetManager::ReleaseAllAsset()
 void AssetManager::Finalize()
 {
     ReleaseAllAsset();
-    if (assetInstance)
+    if (assetInstance)                          //ポインタが空じゃなかったら
     {
-        delete assetInstance;
+        delete assetInstance;                   //中身を削除
     }
 }

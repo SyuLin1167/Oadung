@@ -1,5 +1,5 @@
 #include "Archer.h"
-#include "ObjManager.h"
+
 #include"Player.h"
 
 // @brief Archerコンストラクタ― //
@@ -10,7 +10,7 @@ Archer::Archer(Player* player)
 	,MouseY(0)
 	,Time(0)
 {
-	objHandle = MV1LoadModel("SourceCode/Assets/Archer/SampleModel.mv1");			//モデル読み込み
+	objHandle = AssetManager::GetMesh("SourceCode/Assets/Archer/SampleModel.mv1");			//モデル読み込み
 	MV1SetScale(objHandle, VGet(0.1f, 0.1f, 0.1f));									//モデルのサイズ設定
 
 	//---マウス座標設定---//

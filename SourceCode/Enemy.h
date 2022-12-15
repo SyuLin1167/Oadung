@@ -1,6 +1,9 @@
 #pragma once
 #include<DxLib.h>
+
+
 #include"GameObject.h"
+#include"AssetManager.h"
 
 /* Enemy‚ÌƒNƒ‰ƒX */
 class Enemy :public GameObject
