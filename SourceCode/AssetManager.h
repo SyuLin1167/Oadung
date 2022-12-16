@@ -12,7 +12,7 @@ public:
     /// <summary>
     /// AssetManager‰Šú‰»ˆ—
     /// </summary>
-    static void Initialize();
+    static void Init();
 
     /// <summary>
     /// ƒƒbƒVƒ…‚Ìæ“¾

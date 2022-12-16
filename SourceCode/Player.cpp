@@ -10,16 +10,16 @@ Player::Player()
     ,KeyInput(false)
     ,animType(IDLE)
 {
-    plyAnim = new Animation(objHandle);                                                          //アニメーションのインスタンス
-
     //---モデル読み込み---//
     objHandle =AssetManager::GetMesh("SourceCode/Assets/Player/PlayerModel.mv1");       //モデル読み込み
-    MV1SetScale(objHandle, VGet(0.1f, 0.1f, 0.1f));                             //モデルのサイズ設定
+    MV1SetScale(objHandle, VGet(0.1f, 0.1f, 0.1f));                                     //モデルのサイズ設定
+
+    plyAnim = new Animation(objHandle);                                                 //アニメーションのインスタンス
 
     //---アニメーション読み込み---//
     plyAnim->AddAnimation("SourceCode/Assets/Player/PlayerModel_Idle.mv1");             //待機:0
     plyAnim->AddAnimation("SourceCode/Assets/Player/PlayerModel_Run.mv1");              //走る:1
-    plyAnim->AddAnimation("SourceCode/Assets/Player/PlayerModel_Atack.mv1");            //攻撃:2
+    plyAnim->AddAnimation("SourceCode/Assets/Player/PlayerModel_Atack.mv1",false);            //攻撃:2
 
     //---アニメーション状態セット---//
     animType = IDLE;
@@ -45,6 +45,8 @@ Player::~Player()
 
 void Player::Update(float deltaTime)
 {
+    plyAnim->AddAnimTime(deltaTime);            //現在のアニメーション再生を進める
+
     //---キー入力判定処理---//
     KeyInput = false;                           //未入力時は入力判定をFALSEに
     
@@ -83,20 +85,15 @@ void Player::Update(float deltaTime)
             plyAnim->StartAnim(RUN);
         }
     }
-    else if (CheckHitKey(KEY_INPUT_SPACE))
+    else
     {
-        if (animType != ATACK)
+        if (animType != IDLE)
         {
-            animType = ATACK;
-                plyAnim->StartAnim(ATACK);
+            animType = IDLE;
+            plyAnim->StartAnim(IDLE);
         }
     }
-    else if (animType != IDLE)
-    {
-        animType = IDLE;
-        plyAnim->StartAnim(IDLE);
-    }
-    
+
     MV1SetPosition(objHandle, objPos);                              //ポジション設定
 
     MATRIX RotMatY = MGetRotY(180.0f * (float)(DX_PI / 180.0f));       //逆向きなので180度回転

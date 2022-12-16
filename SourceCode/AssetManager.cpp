@@ -19,7 +19,7 @@ AssetManager::~AssetManager()
 
 // @brief AssetManager‰Šú‰» //
 
-void AssetManager::Initialize()
+void AssetManager::Init()
 {
     if (!assetInstance)                     //ƒ|ƒCƒ“ƒ^‚ª‹ó‚¾‚Á‚½‚ç
     {

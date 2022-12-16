@@ -1,6 +1,7 @@
 #include"DxLib.h"
 #include"SceneManager.h"
 #include"ObjManager.h"
+#include"AssetManager.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -13,6 +14,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	{
 		return -1;				//エラーが起きたら終了
 	}
+
+	//管理クラスの初期化処理//
+	ObjManager::Init();
+	AssetManager::Init();
 
 	SceneManager* sceneManager = new SceneManager();
 
@@ -27,6 +32,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		sceneManager->Draw();			//描画処理
 		ScreenFlip();					//裏画面の内容を表描画に反映
 	}
+	ObjManager::Finalize();
+	AssetManager::Finalize();
 
 	DxLib_End();						//Dxライブラリの後処理
 

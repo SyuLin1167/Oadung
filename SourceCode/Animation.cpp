@@ -36,7 +36,10 @@ int Animation::AddAnimation(string animFileName, float animFps, bool animLoop)
     attachedIndex = MV1AttachAnim(modelHandle, anim.animIndex,
         anim.animHandle, TRUE);                                          //アニメーションをモデルに追加
 
-    anim.totalTime = MV1GetAnimTotalTime(modelHandle, anim.animIndex);                //アニメーション再生時間取得
+    anim.totalTime = MV1GetAnimTotalTime(anim.animHandle, anim.animIndex);                //アニメーション再生時間取得
+
+    //このアニメはまだ再生しないので、異端アニメーション解除
+    MV1DetachAnim(modelHandle, attachedIndex);
 
     animData.push_back(anim);                                                           //末尾にアニメーションデータ追加
 
@@ -54,6 +57,7 @@ void Animation::AddAnimTime(float deltaTime)
     {
         nowAnimTime = 0.0f;                                                                 //時間リセット
     }
+    MV1SetAttachAnimTime(modelHandle, attachedIndex, nowAnimTime);
 }
 
 // @brief アニメーション再生 //

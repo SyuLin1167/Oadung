@@ -44,7 +44,6 @@ SceneBase* Play::Update(float deltaTime)
 
     if (CheckHitKey(KEY_INPUT_R))
     {
-        ObjManager::Finalize();
         return new Result();
     }
     return this;
